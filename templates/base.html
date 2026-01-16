@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Zach Lambert</title>
+  <link rel="stylesheet" href="{{ get_url(path="reset.css") }}">
+  <link rel="stylesheet" href="{{ get_url(path="base.css") }}">
+</head>
+
+<body>
+  <nav>
+    <h1><a href="{{ get_url(path="/") }}">Zach Lambert</a></h1>
+
+    {% set nav_root = get_section(path="_index.md", metadata_only=true) %}
+    {% for nav_section in nav_root.subsections %}
+      {% set nav_section = get_section(path=nav_section, metadata_only=true) %}
+      <h2><a href="{{ nav_section.permalink }}">{{nav_section.title}}</a></h2>
+    {% endfor %}
+
+  </nav>
+  <main>
+    {% block content %}
+    {% endblock content %}
+  </main>
+</body>
+
+</html>
