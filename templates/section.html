@@ -2,10 +2,24 @@
 
 {% block content %}
 
-<h1 class="title">
-  {{ section.title }}
-</h1>
+<header>
+  <h1 class="page-title">
+    {{ section.title }}
+  </h1>
+  {% if section.description %}
+  <div class="page-subtitle">{{ section.description }}</div>
+  {% endif %}
+</header>
+
+<div class="content">
+<div class="section-toc">
+{% for page in section.pages %}
+  <div><a href="{{ page.permalink | safe }}">{{ page.title }}</a></div>
+  <p>{{page.description}}</p>
+{% endfor %}
+</div>
 
 {{ section.content | safe }}
+</div>
 
 {% endblock content %}

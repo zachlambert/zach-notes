@@ -2,11 +2,17 @@
 
 {% block content %}
 
-<h1 class="title">
-  {{ page.title }}
-</h1>
-<p class="subtitle"><strong>{{ page.date }}</strong></p>
+<header>
+  <h1 class="page-title">
+    {{ page.title }}
+  </h1>
+  {% if page.description %}
+  <div class="page-subtitle">{{ page.description }}</div>
+  {% endif %}
+</header>
 
+<div class="content">
 {{ page.content | safe }}
+</div>
 
 {% endblock content %}

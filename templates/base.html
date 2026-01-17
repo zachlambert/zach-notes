@@ -4,25 +4,63 @@
 <head>
   <meta charset="utf-8" />
   <title>Zach Lambert</title>
-  <link rel="stylesheet" href="{{ get_url(path="reset.css") }}">
   <link rel="stylesheet" href="{{ get_url(path="base.css") }}">
+
+  <!-- Custom scripts -->
+  <script defer src="{{ get_url(path="/collapsable.js") }}">
+  </script>
+
+  <!-- https://katex.org/docs/browser -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css"
+    integrity="sha384-Pu5+C18nP5dwykLJOhd2U4Xen7rjScHN/qusop27hdd2drI+lL5KvX7YntvT8yew"
+    crossorigin="anonymous">
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.js"
+    integrity="sha384-2B8pfmZZ6JlVoScJm/5hQfNS2TI/6hPqDZInzzPc8oHpN5SgeNOf4LzREO6p5YtZ"
+    crossorigin="anonymous">
+  </script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/contrib/auto-render.min.js"
+    integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+    crossorigin="anonymous">
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+          ],
+          throwOnError : false
+        });
+    });
+  </script>
 </head>
 
 <body>
   <nav>
-    <h1><a href="{{ get_url(path="/") }}">Zach Lambert</a></h1>
+    <div>
+      <h1><a href="{{ get_url(path="/") }}">Zach Lambert</a></h1>
 
-    {% set nav_root = get_section(path="_index.md", metadata_only=true) %}
-    {% for nav_section in nav_root.subsections %}
-      {% set nav_section = get_section(path=nav_section, metadata_only=true) %}
-      <h2><a href="{{ nav_section.permalink }}">{{nav_section.title}}</a></h2>
-    {% endfor %}
-
+      {% set root = get_section(path="_index.md", metadata_only=true) %}
+      {% for section in root.subsections %}
+        {% set section = get_section(path=section) %}
+        <h2 class="nav-section"><a href="{{ section.permalink }}">{{section.title}}</a></h2>
+        <section>
+          {% for page in section.pages %}
+          <a href="{{ page.permalink }}">{{page.title}}</a><br>
+          {% endfor %}
+        </section>
+      {% endfor %}
+    </div>
   </nav>
   <main>
     {% block content %}
     {% endblock content %}
   </main>
 </body>
-
 </html>

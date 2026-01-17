@@ -1,7 +1,7 @@
 +++
-title = "Math"
-sort_by = "date"
+title = "Geometry"
+sort_by = "weight"
 template = "section.html"
 page_template = "page.html"
-extra = { index = 1 }
+weight = 2
 +++

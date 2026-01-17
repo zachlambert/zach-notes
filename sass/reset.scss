@@ -1,5 +1,10 @@
 /* https://piccalil.li/blog/a-more-modern-css-reset/ */
 
+/* Use border-box sizing */
+* {
+  box-sizing: border-box;
+}
+
 /* Prevent font size inflation */
 html {
   -moz-text-size-adjust: none;

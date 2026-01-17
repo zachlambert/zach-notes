@@ -2,8 +2,16 @@
 
 {% block content %}
 
-<h1 class="title">Website Content</h1>
+{% set root = get_section(path="_index.md", metadata_only=true) %}
 
-TODO
+<header>
+  <h1 class="page-title">
+    {{ root.title }}
+  </h1>
+</header>
+
+<div class="content">
+{{ root.content | safe }}
+</div>
 
 {% endblock content %}
