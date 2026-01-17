@@ -1,6 +1,6 @@
 +++
 title = "Manifolds"
-weight = 5
+weight = 21
 [extra]
 status = "stub"
 +++

@@ -77,18 +77,25 @@ nav {
         flex-grow: 0;
       }
       div.nav-page > span {
-        width: 3em;
+        width: 3.5em;
         text-align: center;
         flex-grow: 0;
         font-size: 14px;
         color: black;
         text-transform: uppercase;
+        user-select: none;
       }
       div.nav-page-stub > span {
-        background-color: hsl(0, 0, 92);
+        background-color: theme.$stub-color;
       }
       div.nav-page-wip > span {
-        background-color: theme.$primary-bg-color;
+        background-color: theme.$wip-color;
+      }
+      div.nav-page-draft > span {
+        background-color: theme.$draft-color;
+      }
+      div.nav-page-done > span {
+        background-color: theme.$done-color;
       }
       div > a:hover {
         color: theme.$primary-fg-color;
@@ -148,9 +155,16 @@ main {
       margin-top: 20px;
     }
 
-    p {
+    & > p {
       margin-left: 20px;
     }
+  }
+
+  & > p {
+    margin-bottom: 0.7em;
+  }
+  & > ul {
+    margin: 0.7em 0 0.7em 0;
   }
 }
 

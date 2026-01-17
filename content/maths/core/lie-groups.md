@@ -1,6 +1,6 @@
 +++
 title = "Lie Groups"
-weight = 4
+weight = 22
 [extra]
 status = "stub"
 +++

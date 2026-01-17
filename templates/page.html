@@ -15,6 +15,9 @@
     {% if page.extra.status == "stub" %}
     [STUB]
     {% endif %}
+    {% if page.extra.status == "draft" %}
+    [DRAFT]
+    {% endif %}
   </h1>
   {% if page.description %}
   <div class="page-subtitle">
