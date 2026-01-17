@@ -67,14 +67,37 @@ nav {
       a:hover {
         color: theme.$primary-fg-color;
       }
+      div.nav-page {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 1em;
+        align-items: flex-start;
+      }
+      div.nav-page > a {
+        flex-grow: 0;
+      }
+      div.nav-page > span {
+        width: 3em;
+        text-align: center;
+        flex-grow: 0;
+        font-size: 14px;
+        color: black;
+        text-transform: uppercase;
+      }
+      div.nav-page-stub > span {
+        background-color: hsl(0, 0, 92);
+      }
+      div.nav-page-wip > span {
+        background-color: theme.$primary-bg-color;
+      }
+      div > a:hover {
+        color: theme.$primary-fg-color;
+      }
+      div.open > a {
+        color: theme.$primary-fg-color;
+      }
       div.open > a:hover {
         color: theme.$primary-hover-color;
-      }
-      div.nav-page-stub {
-        color: gray;
-      }
-      div.open {
-        color: theme.$primary-fg-color;
       }
     }
   }
@@ -157,4 +180,8 @@ main {
     padding-left: 15px;
     border-left: 2px theme.$primary-fg-color solid;
   }
+}
+
+.giallo {
+  padding: 1em;
 }

@@ -1,4 +1,3 @@
-# The URL the site will be built for
 base_url = "https://zachalambert.com"
 compile_sass = true
 build_search_index = true
