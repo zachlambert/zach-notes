@@ -1,16 +1,12 @@
 # The URL the site will be built for
 base_url = "https://zachalambert.com"
-
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-
-# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
+
+[search]
+index_format = "elasticlunr_javascript"
 
 [markdown]
 
 [markdown.highlighting]
 theme = "catppuccin-mocha"
-
-[extra]
-# Put all your custom variables here

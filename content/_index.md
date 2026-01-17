@@ -17,7 +17,7 @@ I take more of an "_engineering maths_" approach, where I focus on the key resul
 
 &nbsp;
 
-However, I am primarily writing these notes for myself - so won't explain all prerequisite concepts (eg: vectors), so some level of existing maths knowledge will be required.
+However, I am primarily writing these notes for myself - so won't explain all prerequisite concepts and a fair amount of existing maths knowledge will be assumed.
 
 ## More about me
 

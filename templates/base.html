@@ -6,9 +6,7 @@
   <title>Zach Lambert</title>
   <link rel="stylesheet" href="{{ get_url(path="base.css") }}">
 
-  <!-- Custom scripts -->
-  <script defer src="{{ get_url(path="/collapsable.js") }}">
-  </script>
+  <!-- Get cdn links from: https://cdnjs.com/libraries -->
 
   <!-- https://katex.org/docs/browser -->
   <link
@@ -39,12 +37,26 @@
         });
     });
   </script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"
+    integrity="sha512-0QarUp4p9r5IqUgSRyP89BHga45OpEd7VR8lbRkJkf48p/EhcU742fWUpKpoDyu9N6XYAEq/vz6m6z1OolnsDw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer">
+  </script>
 </head>
 
 <body>
   <nav>
     <div>
       <h1><a href="{{ get_url(path="/") }}">Zach Lambert</a></h1>
+
+      <form class=search-box action="{{ get_url(path="/search")}}">
+        <input
+          type="text"
+          placeholder="Search"
+          name="query"/>
+      </form>
 
       {% set permalink="" %}
       {% block set_permalink %}

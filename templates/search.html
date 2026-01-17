@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<header>
+  <h1 class="page-title">
+    Search Results
+  </h1>
+  <div id="search-query"></div>
+</header>
+
+<div id="search-results">
+</div>
+
+<script defer src="{{ get_url(path="/search_index.en.js") }}">
+</script>
+<script defer src="{{ get_url(path="/search.js") }}">
+</script>
+
+{% endblock content %}

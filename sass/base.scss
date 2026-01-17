@@ -7,6 +7,7 @@ body {
   padding: 0;
   font-family: 'Roboto', 'Segoe Ui';
   display: flex;
+
   @media (max-width: $collapse-width) {
     flex-direction: column;
   }
@@ -22,30 +23,37 @@ nav {
     display: flex;
     flex-direction: column;
     gap: theme.$default-padding;
+
     @media (min-width: $collapse-width) {
       border-right: 2px hsl(0, 0, 90) solid;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
       flex-grow: 1;
       padding: 0;
 
       margin: 0;
       font-weight: bold;
       color: theme.$primary-fg-color;
+
       a {
         text-decoration: none;
       }
+
       a:hover {
         color: theme.$primary-hover-color;
       }
     }
+
     h1 {
       font-size: 30px;
     }
+
     h2 {
       font-size: 24px;
     }
+
     section {
       margin-left: 5px;
       padding-left: 15px;
@@ -56,12 +64,15 @@ nav {
         font-size: 18px;
         color: black;
       }
+
       a:hover {
         color: theme.$primary-fg-color;
       }
+
       a.open {
         color: theme.$primary-fg-color;
       }
+
       a.open:hover {
         color: theme.$primary-hover-color;
       }
@@ -79,9 +90,11 @@ main {
     .page-title {
       color: theme.$primary-fg-color;
     }
+
     .page-subtitle {
       color: hsl(0, 0, 30);
     }
+
     .section-title {
       color: theme.$primary-fg-color;
     }
@@ -95,11 +108,13 @@ main {
 
 .content {
   font-size: 18px;
+
   a {
     color: theme.$primary-fg-color;
     text-decoration: none;
     font-weight: bold;
   }
+
   a:hover {
     color: theme.$primary-hover-color;
   }
@@ -108,6 +123,7 @@ main {
     div {
       margin-top: 20px;
     }
+
     p {
       margin-left: 20px;
     }
@@ -116,4 +132,28 @@ main {
 
 .katex-html {
   text-align: left;
+}
+
+#search-query {
+  color: hsl(0, 0, 30);
+  font-size: 24px;
+}
+
+.search-result {
+  h2 {
+    a {
+      color: theme.$primary-fg-color;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: theme.$primary-hover-color;
+    }
+  }
+
+  p {
+    margin-left: 5px;
+    padding-left: 15px;
+    border-left: 2px theme.$primary-fg-color solid;
+  }
 }
