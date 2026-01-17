@@ -107,7 +107,7 @@ main {
   }
 }
 
-.content {
+#content {
   font-size: 18px;
 
   a {
@@ -133,16 +133,6 @@ main {
 
 .katex-html {
   text-align: left;
-}
-
-#filter-box {
-  flex-grow: 1;
-  div {
-    display: block;
-  }
-  div.filter-item {
-    margin-left: 5px;
-  }
 }
 
 #search-query {
