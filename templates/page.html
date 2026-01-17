@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block set_permalink %}
+{% set permalink=page.permalink %}
+{% endblock set_permalink %}
+
 {% block content %}
 
 <header>

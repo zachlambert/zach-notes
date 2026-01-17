@@ -46,13 +46,34 @@
     <div>
       <h1><a href="{{ get_url(path="/") }}">Zach Lambert</a></h1>
 
+      {% set permalink="" %}
+      {% block set_permalink %}
+      {% endblock set_permalink %}
+
       {% set root = get_section(path="_index.md", metadata_only=true) %}
       {% for section in root.subsections %}
         {% set section = get_section(path=section) %}
-        <h2 class="nav-section"><a href="{{ section.permalink }}">{{section.title}}</a></h2>
+        {% set open = permalink is starting_with(section.permalink) %}
+        <h2 class="nav-section {% if open %}open{% endif %}">
+          <a href="{{ section.permalink }}">{{section.title}}</a>
+        </h2>
         <section>
-          {% for page in section.pages %}
-          <a href="{{ page.permalink }}">{{page.title}}</a><br>
+          {% for subsection in section.subsections %}
+          {% set subsection = get_section(path=subsection) %}
+          {% set open = permalink is starting_with(subsection.permalink) %}
+          <a
+            class="{% if open %}open{% endif %}"
+            href="{{ subsection.permalink }}">{{subsection.title}}</a><br>
+          {% if open %}
+          <section>
+            {% for page in subsection.pages %}
+            {% set open = permalink is starting_with(page.permalink) %}
+            <a
+              class="{% if open %}open{% endif %}"
+              href="{{ page.permalink }}">{{page.title}}</a><br>
+            {% endfor %}
+          </section>
+          {% endif %}
           {% endfor %}
         </section>
       {% endfor %}

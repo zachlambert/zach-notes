@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block set_permalink %}
+{% set permalink=section.permalink %}
+{% endblock set_permalink %}
+
 {% block content %}
 
 <header>
@@ -13,6 +17,11 @@
 
 <div class="content">
 <div class="section-toc">
+{% for subsection in section.subsections %}
+  {% set subsection = get_section(path=subsection) %}
+  <div><a href="{{ subsection.permalink | safe }}">{{ subsection.title }}</a></div>
+  <p>{{subsection.description}}</p>
+{% endfor %}
 {% for page in section.pages %}
   <div><a href="{{ page.permalink | safe }}">{{ page.title }}</a></div>
   <p>{{page.description}}</p>
