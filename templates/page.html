@@ -13,6 +13,12 @@
   {% if page.description %}
   <div class="page-subtitle">{{ page.description }}</div>
   {% endif %}
+  {% if page.extra.status == "wip" %}
+  <div class="page-subtitle">WORK-IN-PROGRESS</div>
+  {% endif %}
+  {% if page.extra.status == "stub" %}
+  <div class="page-subtitle">STUB</div>
+  {% endif %}
 </header>
 
 <div class="content">

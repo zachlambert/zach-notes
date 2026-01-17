@@ -6,6 +6,9 @@
   <title>Zach Lambert</title>
   <link rel="stylesheet" href="{{ get_url(path="base.css") }}">
 
+  <script defer src="{{ get_url(path="/filter.js") }}">
+  </script>
+
   <!-- Get cdn links from: https://cdnjs.com/libraries -->
 
   <!-- https://katex.org/docs/browser -->
@@ -51,11 +54,20 @@
     <div>
       <h1><a href="{{ get_url(path="/") }}">Zach Lambert</a></h1>
 
-      <form class=search-box action="{{ get_url(path="/search")}}">
+      <form id="search-box" action="{{ get_url(path="/search")}}">
         <input
           type="text"
           placeholder="Search"
           name="query"/>
+      </form>
+      <form id="filter-box" action="">
+        <div><span>Show pages:</span></div>
+        <div class="filter-item">
+          <input type="checkbox" checked="checked" id="filter-wip"/><span>Work-in-progress</span>
+        </div>
+        <div class="filter-item">
+          <input type="checkbox" id="filter-stub"/><span>Stub</span>
+        </div>
       </form>
 
       {% set permalink="" %}
@@ -66,6 +78,7 @@
       {% for section in root.subsections %}
         {% set section = get_section(path=section) %}
         {% set open = permalink is starting_with(section.permalink) %}
+
         <h2 class="nav-section {% if open %}open{% endif %}">
           <a href="{{ section.permalink }}">{{section.title}}</a>
         </h2>
@@ -73,16 +86,17 @@
           {% for subsection in section.subsections %}
           {% set subsection = get_section(path=subsection) %}
           {% set open = permalink is starting_with(subsection.permalink) %}
-          <a
-            class="{% if open %}open{% endif %}"
-            href="{{ subsection.permalink }}">{{subsection.title}}</a><br>
+          <div class="{% if open %}open{% endif %}">
+            <a href="{{ subsection.permalink }}">{{subsection.title}}</a>
+          </div>
           {% if open %}
           <section>
             {% for page in subsection.pages %}
             {% set open = permalink is starting_with(page.permalink) %}
-            <a
-              class="{% if open %}open{% endif %}"
-              href="{{ page.permalink }}">{{page.title}}</a><br>
+            <div
+                class="{% if open %}open{% endif %} nav-page-{{ page.extra.status }}">
+              <a href="{{ page.permalink }}">{{page.title}}</a>
+            </div>
             {% endfor %}
           </section>
           {% endif %}

@@ -19,7 +19,7 @@ nav {
   min-width: theme.$navbar-width;
   max-width: theme.$navbar-width;
 
-  div {
+  & > div {
     display: flex;
     flex-direction: column;
     gap: theme.$default-padding;
@@ -64,17 +64,17 @@ nav {
         font-size: 18px;
         color: black;
       }
-
       a:hover {
         color: theme.$primary-fg-color;
       }
-
-      a.open {
-        color: theme.$primary-fg-color;
-      }
-
-      a.open:hover {
+      div.open > a:hover {
         color: theme.$primary-hover-color;
+      }
+      div.nav-page-stub {
+        color: gray;
+      }
+      div.open {
+        color: theme.$primary-fg-color;
       }
     }
   }
@@ -93,6 +93,7 @@ main {
 
     .page-subtitle {
       color: hsl(0, 0, 30);
+      font-size: 18px;
     }
 
     .section-title {
@@ -132,6 +133,16 @@ main {
 
 .katex-html {
   text-align: left;
+}
+
+#filter-box {
+  flex-grow: 1;
+  div {
+    display: block;
+  }
+  div.filter-item {
+    margin-left: 5px;
+  }
 }
 
 #search-query {

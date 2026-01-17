@@ -2,6 +2,8 @@
 title = "Rotations"
 weight = 6
 description = "Define rotation matrices, the exponential map and it's jacobian, and how to differentiate rotations."
+[extra]
+status = "wip"
 +++
 
 ## Prerequisite: cross-product matrices
