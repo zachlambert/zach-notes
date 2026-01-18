@@ -67,14 +67,32 @@ nav {
       a:hover {
         color: theme.$primary-fg-color;
       }
-      div.nav-page {
+
+      div.nav-section {
         display: flex;
         justify-content: space-between;
         padding-right: 1em;
         align-items: flex-start;
       }
-      div.nav-page > a {
+      div.nav-section > span {
+        width: 3.5em;
+        text-align: center;
         flex-grow: 0;
+        font-size: 14px;
+        color: black;
+        text-transform: uppercase;
+        user-select: none;
+      }
+      div.nav-section.open > span {
+        color: theme.$primary-fg-color;
+        border-bottom: 2px theme.$primary-bg-color solid;
+      }
+
+      div.nav-page {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 1em;
+        align-items: flex-start;
       }
       div.nav-page > span {
         width: 3.5em;
@@ -97,6 +115,7 @@ nav {
       div.nav-page-done > span {
         background-color: theme.$done-color;
       }
+
       div > a:hover {
         color: theme.$primary-fg-color;
       }
@@ -135,6 +154,10 @@ main {
     margin-top: 30px;
     margin-bottom: 10px;
   }
+  h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
 }
 
 #content {
@@ -161,10 +184,33 @@ main {
   }
 
   & > p {
-    margin-bottom: 0.7em;
+    margin-bottom: 0.6em;
   }
   & > ul {
-    margin: 0.7em 0 0.7em 0;
+    margin: 0.6em 0 0.6em 0;
+  }
+  & > p.details {
+    margin-bottom: 0.9em;
+    color: hsl(0, 0, 50);
+  }
+  span.katex-display {
+    margin: 0.6em 0 0.6em 0;
+  }
+
+
+  details.aside {
+    border: 2px hsl(0, 0, 90) solid;
+    summary {
+      cursor: pointer;
+    }
+    & > * {
+      padding: 8px;
+    }
+  }
+  details[open].aside {
+    summary {
+      background: hsl(0, 0, 90);
+    }
   }
 }
 

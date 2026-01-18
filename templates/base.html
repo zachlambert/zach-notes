@@ -67,8 +67,11 @@
           {% for subsection in section.subsections %}
           {% set subsection = get_section(path=subsection) %}
           {% set open = permalink is starting_with(subsection.permalink) %}
-          <div class="{% if open %}open{% endif %}">
-            <a href="{{ subsection.permalink }}">{{subsection.title}}</a>
+          <div class="nav-section {% if open %}open{% endif %}">
+            <a href="{{ subsection.permalink }}">
+              {{subsection.title}}
+            </a>
+            <span>{{ subsection.pages | length }}</span>
           </div>
           {% if open %}
           <section>
