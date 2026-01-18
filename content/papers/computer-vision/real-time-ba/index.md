@@ -4,7 +4,7 @@ weight = 100
 +++
 
 {{ pdf(
-  title="Real time localization and reconstruction",
+  title="Paper: Real time localization and reconstruction",
   url="paper.pdf"
 )}}
 

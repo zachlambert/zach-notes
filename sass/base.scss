@@ -22,7 +22,7 @@ nav {
   &>div {
     display: flex;
     flex-direction: column;
-    gap: theme.$default-padding;
+    gap: 5px;
 
     @media (min-width: $collapse-width) {
       border-right: 2px hsl(0, 0, 90) solid;
@@ -51,7 +51,7 @@ nav {
     }
 
     h2 {
-      font-size: 24px;
+      font-size: 22px;
     }
 
     section {
@@ -100,7 +100,7 @@ nav {
       }
 
       div.nav-page>a {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.2em;
       }
 
@@ -180,7 +180,7 @@ main {
 }
 
 #content {
-  font-size: 18px;
+  font-size: 16px;
 
   a {
     color: theme.$primary-fg-color;
@@ -246,6 +246,9 @@ main {
 #search-query {
   color: hsl(0, 0, 30);
   font-size: 24px;
+}
+#search-box {
+  margin-bottom: 10px;
 }
 
 .search-result {
