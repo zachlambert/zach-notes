@@ -1,6 +1,5 @@
 +++
 title = "Robust odometry estimation for RGB-D cameras"
-weight = 100
 +++
 
 # Summary

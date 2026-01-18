@@ -1,14 +1,12 @@
 +++
 title = "Real-time bundle adjustment"
-weight = 100
 +++
 
 {{ pdf(
   title="Paper: Real time localization and reconstruction",
-  url="paper.pdf"
+  url="../pdfs/real-time-ba.pdf"
 )}}
 
-- [Paper PDF](paper.pdf)
 - **Title**: Real time localization and reconstruction
 - **Date**: 2006
 - **Key result**: Provides a real-time method for performing bundle adjustment (and therefore structure-from-motion).

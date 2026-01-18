@@ -1,4 +1,5 @@
 +++
 title = "2D SLAM"
-weight = 100
+sort_by = "title"
+weight = 1
 +++

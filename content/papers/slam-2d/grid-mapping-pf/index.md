@@ -1,6 +1,5 @@
 +++
 title = "Improved techniques for grid mapping with rao-blackwellized particle filters"
-weight = 100
 +++
 
 [paper](paper.pdf)

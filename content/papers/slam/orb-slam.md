@@ -1,9 +1,11 @@
 +++
 title = "ORB-SLAM"
-weight = 100
 +++
 
-[ORB-SLAM: a Versatile and Accurate Monocular SLAM System](paper.pdf)
+{{ pdf(
+  title="Paper: ORB-SLAM: a Versatile and Accurate Monocular SLAM System"
+  url="../pdfs/orb-slam.pdf"
+)}}
 
 ORB-SLAM (the first version) was produced in 2015 and is pure monocular SLAM system.
 

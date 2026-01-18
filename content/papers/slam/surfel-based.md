@@ -1,6 +1,5 @@
 +++
 title = "Surfel-based SLAM"
-weight = 100
 +++
 
 # Overview

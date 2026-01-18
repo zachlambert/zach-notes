@@ -1,6 +1,5 @@
 +++
 title = "ORB-SLAM2"
-weight = 100
 +++
 
 [ORB-SLAM2: an Open-Souce SLAM System for Monocular, Stereo and RGB-D Cameras]

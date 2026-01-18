@@ -1,6 +1,5 @@
 +++
 title = "Volumetric method for building models from range images"
-weight = 100
 +++
 
 **A volumetric method for building complex models from range images**

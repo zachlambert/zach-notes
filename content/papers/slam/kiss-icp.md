@@ -1,7 +1,11 @@
 +++
 title = "KISS ICP"
-weight = 100
 +++
+
+{{ pdf(
+    title="Paper: KISS-ICP",
+    url="https://arxiv.org/pdf/2209.15397",
+)}}
 
 # Summary
 

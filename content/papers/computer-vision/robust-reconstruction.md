@@ -1,6 +1,5 @@
 +++
 title = "Robust reconstruction"
-weight = 100
 +++
 
 # Summary

@@ -1,6 +1,5 @@
 +++
 title = "ORB-SLAM3"
-weight = 100
 +++
 
 [ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM](paper.pdf)

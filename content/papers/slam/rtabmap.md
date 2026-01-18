@@ -1,6 +1,5 @@
 +++
 title = "Rtabmap"
-weight = 100
 +++
 
 RTAB-Map as an Open-Source Lidar and Visual SLAM Library for Large-Scale and Long-Term Online Operation
