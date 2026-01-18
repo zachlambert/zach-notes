@@ -4,7 +4,12 @@
 <head>
   <meta charset="utf-8" />
   <title>Zach Lambert</title>
+
   <link rel="stylesheet" href="{{ get_url(path="base.css") }}">
+  <link rel="stylesheet" href="{{ get_url(path="nav.css") }}">
+  <link rel="stylesheet" href="{{ get_url(path="content.css") }}">
+  <link rel="stylesheet" href="{{ get_url(path="pdf.css") }}">
+  <link rel="stylesheet" href="{{ get_url(path="paper.css") }}">
 
   <!-- Get cdn links from: https://cdnjs.com/libraries -->
 
@@ -37,7 +42,13 @@
   <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.530/web/pdf_viewer.min.css">-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 
-  <script defer type="module" src="{{ get_url(path="/load-page.js") }}">
+  <script defer type="module" src="{{ get_url(path="/load-katex.js") }}">
+  </script>
+  <script defer type="module" src="{{ get_url(path="/load-pdf.js") }}">
+  </script>
+  <script defer type="module" src="{{ get_url(path="/load-paper.js") }}">
+  </script>
+
   </script>
 
 </head>

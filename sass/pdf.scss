@@ -1,0 +1,32 @@
+@use 'theme.scss';
+
+.pdf-viewer {
+  border: 2px gray solid;
+  width: wrap;
+  display: inline-block;
+  margin-bottom: 20px;
+
+  &>.pdf-viewer-title {
+    padding: 6px;
+    background: hsl(0, 0, 80);
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    gap: 5px;
+  }
+  &>.pdf-viewer-header {
+    padding: 6px;
+    display: flex;
+    user-select: none;
+    button {
+      cursor: pointer;
+      border-radius: 0;
+      border: 0;
+      background: hsl(0, 0, 80);
+    }
+    button:hover {
+      background: hsl(0, 0, 90);
+    }
+    gap: 10px;
+  }
+}

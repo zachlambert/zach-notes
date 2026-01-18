@@ -1,14 +1,3 @@
-// Render LaTeX via katex
-document.addEventListener("DOMContentLoaded", function () {
-  renderMathInElement(document.body, {
-    delimiters: [
-      { left: "$$", right: "$$", display: true },
-      { left: "$", right: "$", display: false },
-    ],
-    throwOnError: false,
-  });
-});
-
 // Render PDFs
 
 const pdfjsLib = window["pdfjs-dist/build/pdf"];
@@ -28,7 +17,7 @@ function renderPdf(url, page, pageCountAttr, pageCountEl, canvas) {
       return doc.getPage(page);
     })
     .then(function (page) {
-      const viewport = page.getViewport({ scale: 1.8 });
+      const viewport = page.getViewport({ scale: 1.5 });
       canvas.height = viewport.height;
       canvas.width = viewport.width;
 

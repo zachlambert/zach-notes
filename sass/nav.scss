@@ -1,0 +1,135 @@
+@use 'theme.scss';
+
+#search-query {
+  color: hsl(0, 0, 30);
+  font-size: 24px;
+}
+
+#search-box {
+  margin-bottom: 10px;
+}
+
+nav {
+  &>div {
+    @media (min-width: theme.$collapse-width) {
+      border-right: 2px hsl(0, 0, 90) solid;
+    }
+
+    h1,
+    h2 {
+      flex-grow: 1;
+      padding: 0;
+
+      margin: 0;
+      font-weight: bold;
+      color: theme.$primary-fg-color;
+
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: theme.$primary-hover-color;
+      }
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    section {
+      margin-left: 5px;
+      padding-left: 15px;
+      border-left: 2px theme.$primary-fg-color solid;
+
+      a {
+        text-decoration: none;
+        font-size: 18px;
+        color: black;
+      }
+
+      a:hover {
+        color: theme.$primary-fg-color;
+      }
+
+      div.nav-section {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 1em;
+        align-items: flex-start;
+      }
+
+      div.nav-section>span {
+        width: 3.5em;
+        text-align: center;
+        flex-grow: 0;
+        font-size: 14px;
+        color: black;
+        text-transform: uppercase;
+        user-select: none;
+      }
+
+      div.nav-section.open>span {
+        color: theme.$primary-fg-color;
+        border-bottom: 2px theme.$primary-bg-color solid;
+      }
+
+      div.nav-page {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 1em;
+        align-items: flex-start;
+        margin: 0.2em 0 0.2em 0;
+      }
+
+      div.nav-page>a {
+        font-size: 16px;
+        line-height: 1.2em;
+      }
+
+      div.nav-page>span {
+        flex-shrink: 0;
+        width: 3.5em;
+        text-align: center;
+        flex-grow: 0;
+        font-size: 14px;
+        color: black;
+        text-transform: uppercase;
+        user-select: none;
+        margin-left: 1em;
+      }
+
+      div.nav-page-stub>span {
+        background-color: theme.$stub-color;
+      }
+
+      div.nav-page-wip>span {
+        background-color: theme.$wip-color;
+      }
+
+      div.nav-page-draft>span {
+        background-color: theme.$draft-color;
+      }
+
+      div.nav-page-done>span {
+        background-color: theme.$done-color;
+      }
+
+      div>a:hover {
+        color: theme.$primary-fg-color;
+      }
+
+      div.open>a {
+        color: theme.$primary-fg-color;
+      }
+
+      div.open>a:hover {
+        color: theme.$primary-hover-color;
+      }
+    }
+  }
+}

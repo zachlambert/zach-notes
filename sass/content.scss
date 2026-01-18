@@ -1,0 +1,116 @@
+@use 'theme.scss';
+
+main {
+  flex-grow: 1;
+  padding: 30px;
+
+  header {
+    margin-bottom: 30px;
+
+    .page-title {
+      color: theme.$primary-fg-color;
+    }
+
+    .page-subtitle {
+      color: hsl(0, 0, 30);
+      font-size: 18px;
+    }
+
+    .section-title {
+      color: theme.$primary-fg-color;
+    }
+  }
+
+  h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+#content {
+  font-size: 16px;
+
+  a {
+    color: theme.$primary-fg-color;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  a:hover {
+    color: theme.$primary-hover-color;
+  }
+
+  .section-toc {
+    div {
+      margin-top: 20px;
+    }
+
+    &>p {
+      margin-left: 20px;
+    }
+  }
+
+  &>p {
+    margin-bottom: 0.6em;
+  }
+
+  &>ul {
+    margin: 0.6em 0 0.6em 0;
+  }
+
+  &>p.details {
+    margin-bottom: 0.9em;
+    color: hsl(0, 0, 50);
+  }
+
+  span.katex-display {
+    margin: 0.6em 0 0.6em 0;
+  }
+
+
+  details.aside {
+    border: 2px hsl(0, 0, 90) solid;
+
+    summary {
+      cursor: pointer;
+    }
+
+    &>* {
+      padding: 8px;
+    }
+  }
+
+  details[open].aside {
+    summary {
+      background: hsl(0, 0, 90);
+    }
+  }
+}
+
+.katex-html {
+  text-align: left;
+}
+
+.search-result {
+  h2 {
+    a {
+      color: theme.$primary-fg-color;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: theme.$primary-hover-color;
+    }
+  }
+
+  p {
+    margin-left: 5px;
+    padding-left: 15px;
+    border-left: 2px theme.$primary-fg-color solid;
+  }
+}
