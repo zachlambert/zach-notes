@@ -19,7 +19,7 @@ nav {
   min-width: theme.$navbar-width;
   max-width: theme.$navbar-width;
 
-  & > div {
+  &>div {
     display: flex;
     flex-direction: column;
     gap: theme.$default-padding;
@@ -64,6 +64,7 @@ nav {
         font-size: 18px;
         color: black;
       }
+
       a:hover {
         color: theme.$primary-fg-color;
       }
@@ -74,7 +75,8 @@ nav {
         padding-right: 1em;
         align-items: flex-start;
       }
-      div.nav-section > span {
+
+      div.nav-section>span {
         width: 3.5em;
         text-align: center;
         flex-grow: 0;
@@ -83,7 +85,8 @@ nav {
         text-transform: uppercase;
         user-select: none;
       }
-      div.nav-section.open > span {
+
+      div.nav-section.open>span {
         color: theme.$primary-fg-color;
         border-bottom: 2px theme.$primary-bg-color solid;
       }
@@ -95,11 +98,13 @@ nav {
         align-items: flex-start;
         margin: 0.2em 0 0.2em 0;
       }
-      div.nav-page > a {
+
+      div.nav-page>a {
         font-size: 18px;
         line-height: 1.2em;
       }
-      div.nav-page > span {
+
+      div.nav-page>span {
         flex-shrink: 0;
         width: 3.5em;
         text-align: center;
@@ -110,26 +115,32 @@ nav {
         user-select: none;
         margin-left: 1em;
       }
-      div.nav-page-stub > span {
+
+      div.nav-page-stub>span {
         background-color: theme.$stub-color;
       }
-      div.nav-page-wip > span {
+
+      div.nav-page-wip>span {
         background-color: theme.$wip-color;
       }
-      div.nav-page-draft > span {
+
+      div.nav-page-draft>span {
         background-color: theme.$draft-color;
       }
-      div.nav-page-done > span {
+
+      div.nav-page-done>span {
         background-color: theme.$done-color;
       }
 
-      div > a:hover {
+      div>a:hover {
         color: theme.$primary-fg-color;
       }
-      div.open > a {
+
+      div.open>a {
         color: theme.$primary-fg-color;
       }
-      div.open > a:hover {
+
+      div.open>a:hover {
         color: theme.$primary-hover-color;
       }
     }
@@ -161,6 +172,7 @@ main {
     margin-top: 30px;
     margin-bottom: 10px;
   }
+
   h3 {
     margin-top: 30px;
     margin-bottom: 10px;
@@ -185,21 +197,24 @@ main {
       margin-top: 20px;
     }
 
-    & > p {
+    &>p {
       margin-left: 20px;
     }
   }
 
-  & > p {
+  &>p {
     margin-bottom: 0.6em;
   }
-  & > ul {
+
+  &>ul {
     margin: 0.6em 0 0.6em 0;
   }
-  & > p.details {
+
+  &>p.details {
     margin-bottom: 0.9em;
     color: hsl(0, 0, 50);
   }
+
   span.katex-display {
     margin: 0.6em 0 0.6em 0;
   }
@@ -207,13 +222,16 @@ main {
 
   details.aside {
     border: 2px hsl(0, 0, 90) solid;
+
     summary {
       cursor: pointer;
     }
-    & > * {
+
+    &>* {
       padding: 8px;
     }
   }
+
   details[open].aside {
     summary {
       background: hsl(0, 0, 90);
@@ -251,4 +269,34 @@ main {
 
 .giallo {
   padding: 1em;
+}
+
+.pdf-viewer {
+  border: 2px gray solid;
+  width: wrap;
+  display: inline-block;
+
+  &>.pdf-viewer-title {
+    padding: 6px;
+    background: hsl(0, 0, 80);
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    gap: 5px;
+  }
+  &>.pdf-viewer-header {
+    padding: 6px;
+    display: flex;
+    user-select: none;
+    button {
+      cursor: pointer;
+      border-radius: 0;
+      border: 0;
+      background: hsl(0, 0, 80);
+    }
+    button:hover {
+      background: hsl(0, 0, 90);
+    }
+    gap: 10px;
+  }
 }

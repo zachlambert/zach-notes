@@ -15,7 +15,11 @@ const pdfjsLib = window["pdfjs-dist/build/pdf"];
 pdfjsLib.GlobalWorkerOptions.workerSrc =
   "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js";
 
+const queueOperations = []
+let renderInProgress = false;
+
 function renderPdf(url, page, pageCountAttr, pageCountEl, canvas) {
+  renderInProgress = true;
   pdfjsLib
     .getDocument(url)
     .promise.then(function (doc) {
@@ -28,11 +32,18 @@ function renderPdf(url, page, pageCountAttr, pageCountEl, canvas) {
       canvas.height = viewport.height;
       canvas.width = viewport.width;
 
-      page.render({
+      return page.render({
         canvasContext: canvas.getContext("2d"),
         viewport: viewport,
-      });
-    })
+      }).promise;
+    }).then(function () {
+      if (queueOperations.length > 0) {
+        const operation = queueOperations.pop();
+        operation();
+      } else {
+        renderInProgress = false;
+      }
+    });
 }
 
 for (const el of document.getElementsByClassName("pdf-viewer")) {
@@ -52,24 +63,42 @@ for (const el of document.getElementsByClassName("pdf-viewer")) {
   };
   renderThis();
 
-  el.getElementsByClassName("pdf-viewer-prev")[0].addEventListener(
-    "click",
-    function () {
-      if (parseInt(pageAttr.nodeValue) > 1) {
+  function callOperation(operation) {
+    if (renderInProgress) {
+      queueOperations.push(operation);
+    } else {
+      operation();
+    }
+  }
+  function onPrev() {
+    if (parseInt(pageAttr.nodeValue) > 1) {
+      callOperation(() => {
         pageAttr.nodeValue = parseInt(pageAttr.nodeValue) - 1;
         pageEl.innerHTML = pageAttr.nodeValue;
         renderThis();
-      }
-    },
-  );
-  el.getElementsByClassName("pdf-viewer-next")[0].addEventListener(
-    "click",
-    function () {
-      if (parseInt(pageAttr.nodeValue) < parseInt(pageCountAttr.nodeValue)) {
+      });
+    }
+  }
+  function onNext() {
+    if (parseInt(pageAttr.nodeValue) < parseInt(pageCountAttr.nodeValue)) {
+      callOperation(() => {
         pageAttr.nodeValue = parseInt(pageAttr.nodeValue) + 1;
         pageEl.innerHTML = pageAttr.nodeValue;
         renderThis();
+      });
+    }
+  }
+
+  el.getElementsByClassName("pdf-viewer-prev")[0].addEventListener("click", onPrev);
+  el.getElementsByClassName("pdf-viewer-next")[0].addEventListener("click", onNext);
+  canvas.addEventListener(
+    "click",
+    function(event) {
+      if (event.offsetX < canvas.width / 2) {
+        onPrev();
+      } else {
+        onNext();
       }
-    },
+    }
   );
 }
