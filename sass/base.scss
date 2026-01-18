@@ -93,8 +93,14 @@ nav {
         justify-content: space-between;
         padding-right: 1em;
         align-items: flex-start;
+        margin: 0.2em 0 0.2em 0;
+      }
+      div.nav-page > a {
+        font-size: 18px;
+        line-height: 1.2em;
       }
       div.nav-page > span {
+        flex-shrink: 0;
         width: 3.5em;
         text-align: center;
         flex-grow: 0;
@@ -102,6 +108,7 @@ nav {
         color: black;
         text-transform: uppercase;
         user-select: none;
+        margin-left: 1em;
       }
       div.nav-page-stub > span {
         background-color: theme.$stub-color;

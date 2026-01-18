@@ -34,7 +34,10 @@
     referrerpolicy="no-referrer">
   </script>
 
-  <script defer src="{{ get_url(path="/load-page.js") }}">
+  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.530/web/pdf_viewer.min.css">-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+  <script defer type="module" src="{{ get_url(path="/load-page.js") }}">
   </script>
 
 </head>
@@ -77,9 +80,14 @@
           <section>
             {% for page in subsection.pages %}
             {% set open = permalink is starting_with(page.permalink) %}
-            <div class="nav-page {% if open %}open{% endif %} nav-page-{{ page.extra.status }}">
+            {% if "status" in page.extra %}
+            {% set status=page.extra.status %}
+            {% else %}
+            {% set status="stub" %}
+            {% endif %}
+            <div class="nav-page {% if open %}open{% endif %} nav-page-{{ status }}">
               <a href="{{ page.permalink }}">{{page.title}}</a>
-              <span>{{page.extra.status}}</span>
+              <span>{{status}}</span>
             </div>
             {% endfor %}
           </section>

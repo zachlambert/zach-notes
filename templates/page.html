@@ -9,13 +9,19 @@
 <header>
   <h1 class="page-title">
     {{ page.title }}
-    {% if page.extra.status == "wip" %}
+    {% if "status" in page.extra %}
+    {% set status = page.extra.status %}
+    {% else %}
+    {% set status = "stub" %}
+    {% endif %}
+
+    {% if status == "wip" %}
     [WORK-IN-PROGRESS]
     {% endif %}
-    {% if page.extra.status == "stub" %}
+    {% if status == "stub" %}
     [STUB]
     {% endif %}
-    {% if page.extra.status == "draft" %}
+    {% if status == "draft" %}
     [DRAFT]
     {% endif %}
   </h1>

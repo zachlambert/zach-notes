@@ -3,7 +3,10 @@ title = "Real-time bundle adjustment"
 weight = 100
 +++
 
-{{ pdf(title="Real time localization and reconstruction", url="get_url("paper.pdf)") }}
+{{ pdf(
+  title="Real time localization and reconstruction",
+  url="paper.pdf"
+)}}
 
 - [Paper PDF](paper.pdf)
 - **Title**: Real time localization and reconstruction
