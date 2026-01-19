@@ -1,2 +1,13 @@
 @use 'theme.scss';
 
+.paper-summary {
+
+  border: 2px hsl(0, 0, 80) solid;
+  display: grid;
+  padding: 10px;
+  grid-template-columns: auto auto;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas: "sidebar content";
+  column-gap: 40px;
+  margin-bottom: 10px;
+}

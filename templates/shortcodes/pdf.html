@@ -1,12 +1,19 @@
+{% set path = "media/" %}
+{% for i in range(end = page.components | length - 1) %}
+  {% set_global path = path ~ page.components[i] ~ "/" %}
+{% endfor %}
+{% set path = path ~ file %}
+{% set url = get_url(path=path) %}
+
 <details
   class="pdf-viewer"
   closed
-  data-url="{{ get_url(path=page.path ~ url)}}"
+  data-url="{{url}}"
   data-page="1"
   data-page-count="1">
 <summary class="pdf-viewer-title">
   <div>{{ title }}</div>
-  <div><a href="{{ get_url(path=page.path ~ url)}}">view file</a></div>
+  <div><a href="{{url}}">view file</a></div>
 </summary>
 <div class="pdf-viewer-header">
   <button class="pdf-viewer-prev">Previous</button>

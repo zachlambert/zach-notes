@@ -3,8 +3,8 @@ title = "Real-time bundle adjustment"
 +++
 
 {{ pdf(
-  title="Paper: Real time localization and reconstruction",
-  url="../pdfs/real-time-ba.pdf"
+  title="View paper",
+  file="real-time-ba.pdf"
 )}}
 
 - **Title**: Real time localization and reconstruction

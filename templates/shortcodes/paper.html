@@ -3,4 +3,32 @@
   data-doi="{{ doi }}">
 </div>
 
-https://www.doi2bib.org/
+{% if pdf %}
+
+{% set path = "media/" %}
+{% for i in range(end = page.components | length - 1) %}
+  {% set_global path = path ~ page.components[i] ~ "/" %}
+{% endfor %}
+{% set path = path ~ pdf %}
+{% set url = get_url(path=path) %}
+
+<details
+  class="pdf-viewer"
+  closed
+  data-url="{{url}}"
+  data-page="1"
+  data-page-count="1">
+<summary class="pdf-viewer-title">
+  <div>View pdf</div>
+  <div><a href="{{url}}">open file</a></div>
+</summary>
+<div class="pdf-viewer-header">
+  <button class="pdf-viewer-prev">Previous</button>
+  <button class="pdf-viewer-next">Next</button>
+  <div>Page: <span class="pdf-viewer-page"></span> / <span class="pdf-viewer-page-count"></span></div>
+</div>
+<canvas>
+</canvas>
+</details><br>
+
+{% endif %}

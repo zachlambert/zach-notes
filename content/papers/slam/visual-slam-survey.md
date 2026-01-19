@@ -2,4 +2,12 @@
 title = "A comprehensive survey of visual SLAM algorithms"
 +++
 
-[paper](paper.pdf)
+{{ pdf(
+title="Paper",
+file="visual-slam-survey.pdf"
+)}}
+
+{{ pdf(
+title="Reference 10",
+file="visual-slam-survey-ref-10.pdf"
+)}}

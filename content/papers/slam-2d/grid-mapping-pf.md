@@ -2,7 +2,7 @@
 title = "Improved techniques for grid mapping with rao-blackwellized particle filters"
 +++
 
-[paper](paper.pdf)
+{{ pdf(title="Paper", file="grid-mapping-pf.pdf") }}
 
 See the [GMapping](https://openslam-org.github.io/gmapping.html) page which gives this paper as the basis for the implementation.
 

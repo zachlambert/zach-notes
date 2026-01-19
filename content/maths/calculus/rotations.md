@@ -42,7 +42,9 @@ $$R = I + \frac{\sin\theta}{\theta} \phi^\wedge + \frac{1 - \cos\theta}{\theta^2
 Or in terms of the normalized vector $ n $:
 $$R = I + \sin\theta \left(n^\wedge\right) + (1 - \cos\theta)\left(n^\wedge\right)^2 $$
 
-TODO: Diagram of explanation
+{{ aside_begin(label="Graphical explanation") }}
+{{ image(file="rotations-rodrigues.png", width="400") }}
+{{ aside_end() }}
 
 This equation is in-fact equal to the **exponential map** of the matrix $\phi^\wedge$:
 $$

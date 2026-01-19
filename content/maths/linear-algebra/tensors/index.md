@@ -92,7 +92,7 @@ $$
 
 The basis vectors are called the **dual basis vectors** and we can think of them as extracting the vector component for the corresponding vector basis vector:
 $$
-e_j \cdot \left(x_ie_i\right) = x_j
+\epsilon_j \cdot \left(x_ie_i\right) = x_j
 $$
 
 ## Defining conventions going forward

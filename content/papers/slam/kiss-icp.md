@@ -2,10 +2,10 @@
 title = "KISS ICP"
 +++
 
-{{ pdf(
-    title="Paper: KISS-ICP",
-    url="https://arxiv.org/pdf/2209.15397",
-)}}
+{{ paper(doi="10.1109/LRA.2023.3236571") }}
+
+{{ pdf(title="View paper", file="kiss-icp.pdf" )}}
+
 
 # Summary
 

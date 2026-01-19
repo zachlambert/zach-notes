@@ -19,7 +19,6 @@ nav {
     h2 {
       flex-grow: 1;
       padding: 0;
-
       margin: 0;
       font-weight: bold;
       color: theme.$primary-fg-color;
@@ -32,13 +31,14 @@ nav {
         color: theme.$primary-hover-color;
       }
     }
-
     h1 {
       font-size: 30px;
     }
-
     h2 {
       font-size: 22px;
+    }
+    &> h2 {
+      margin-top: 10px;
     }
 
     section {

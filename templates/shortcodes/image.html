@@ -1,0 +1,10 @@
+{% set path = "media/" %}
+{% for i in range(end = page.components | length - 1) %}
+  {% set_global path = path ~ page.components[i] ~ "/" %}
+{% endfor %}
+{% set path = path ~ file %}
+{% set url = get_url(path=path) %}
+
+<div class="image">
+  <img src="{{url}}" width="{{width}}"/>
+</div>
