@@ -1,5 +1,5 @@
 +++
-title = "Improved techniques for grid mapping with rao-blackwellized particle filters"
+title = "GMapping"
 [extra]
 status = "wip"
 +++

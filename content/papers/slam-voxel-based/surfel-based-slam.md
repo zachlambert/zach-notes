@@ -1,5 +1,7 @@
 +++
-title = "Surfel-based SLAM"
+title = "Surfel-based tracking"
+[extra]
+status = "wip"
 +++
 
 {{ paper(doi="10.15607/RSS.2018.XIV.016", pdf="surfel-based-slam.pdf")}}

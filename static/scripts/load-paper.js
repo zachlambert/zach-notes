@@ -47,6 +47,11 @@ for (const el of document.getElementsByClassName("paper-summary")) {
       makeField("URL", `<a href='${url}'>${url}</a>`);
     }
 
+    if ("abstract" in data) {
+      const abstract = data["abstract"];
+      makeField("Abstract", `<p>${abstract}</p>`);
+    }
+
     el.innerHTML = html;
   });
 }

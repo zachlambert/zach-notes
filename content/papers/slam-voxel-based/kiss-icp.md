@@ -1,5 +1,7 @@
 +++
 title = "KISS ICP"
+[extra]
+status = "wip"
 +++
 
 {{ paper(doi="10.1109/LRA.2023.3236571", file="kiss-icp.pdf") }}
