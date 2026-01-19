@@ -1,6 +1,10 @@
 +++
 title = "ORB-SLAM3"
+[extra]
+status = "wip"
 +++
+
+{{ paper(doi="10.1145/3640115.3640180", pdf="orb-slam-3.pdf") }}
 
 [ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM](paper.pdf)
 

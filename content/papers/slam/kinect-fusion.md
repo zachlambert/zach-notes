@@ -2,7 +2,4 @@
 title = "KinectFusion"
 +++
 
-{{ pdf(
-    title="Paper: KinectFusion: Real-Time Dense Surface Mapping and Tracking",
-    file="kinect-fusion.pdf"
-)}}
+{{ paper(doi="10.1109/ISMAR.2011.6092378", pdf="kinect-fusion.pdf") }}

@@ -1,11 +1,8 @@
 +++
-title = "A comprehensive survey of visual SLAM algorithms"
+title = "Visual SLAM survey 2022"
 +++
 
-{{ pdf(
-title="Paper",
-file="visual-slam-survey.pdf"
-)}}
+{{ paper(doi="10.3390/robotics11010024", pdf="visual-slam-survey.pdf") }}
 
 {{ pdf(
 title="Reference 10",

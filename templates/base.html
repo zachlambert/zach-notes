@@ -104,6 +104,19 @@
           </section>
           {% endif %}
           {% endfor %}
+
+          {% for page in section.pages %}
+          {% set open = permalink is starting_with(page.permalink) %}
+          {% if "status" in page.extra %}
+          {% set status=page.extra.status %}
+          {% else %}
+          {% set status="stub" %}
+          {% endif %}
+          <div class="nav-page {% if open %}open{% endif %} nav-page-{{ status }}">
+            <a href="{{ page.permalink }}">{{page.title}}</a>
+            <span>{{status}}</span>
+          </div>
+          {% endfor %}
         </section>
       {% endfor %}
     </div>

@@ -2,6 +2,8 @@
 title = "Surfel-based SLAM"
 +++
 
+{{ paper(doi="10.15607/RSS.2018.XIV.016", pdf="surfel-based-slam.pdf")}}
+
 # Overview
 
 **Efficient Surfel-Based SLAM using 3D Laser Range Data in Urban Environments**

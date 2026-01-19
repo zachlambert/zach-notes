@@ -2,10 +2,7 @@
 title = "KISS ICP"
 +++
 
-{{ paper(doi="10.1109/LRA.2023.3236571") }}
-
-{{ pdf(title="View paper", file="kiss-icp.pdf" )}}
-
+{{ paper(doi="10.1109/LRA.2023.3236571", file="kiss-icp.pdf") }}
 
 # Summary
 

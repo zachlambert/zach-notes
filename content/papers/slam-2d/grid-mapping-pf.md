@@ -1,8 +1,10 @@
 +++
 title = "Improved techniques for grid mapping with rao-blackwellized particle filters"
+[extra]
+status = "wip"
 +++
 
-{{ pdf(title="Paper", file="grid-mapping-pf.pdf") }}
+{{ paper(doi="10.1109/TRO.2006.889486", pdf="grid-mapping-pf.pdf") }}
 
 See the [GMapping](https://openslam-org.github.io/gmapping.html) page which gives this paper as the basis for the implementation.
 
@@ -12,7 +14,7 @@ Typically this would be used to construct a 2D occupancy map and then assuming t
 
 # Algorithm
 
-Estimate the joint posterior $p(x*{1:t}, m | z*{1:t}, u\_{1:t-1}) for:
+Estimate the joint posterior $p(x_{1:t}, m | z_{1:t}, u_{1:t-1})$ for:
 
 - Pose trajectory $x_{1:t}$
 - Map $m$
@@ -28,7 +30,7 @@ $$
 This splits the problem into:
 
 - Estimate $p(x_{1:t} | z_{1:t}, u_{1:t-1})$ which finds the pose trajectory separate to the map estimate.
-- Estimate $p(x_{1:t} | x_{1:t}, z_{1:t})$ which is just building an occupancy map from known poses and measurements, which is simple.
+- Estimate $p(m | x_{1:t}, z_{1:t})$ which is just building an occupancy map from known poses and measurements, which is simple.
 
 This factorisation is called **rao-blackwellization**
 

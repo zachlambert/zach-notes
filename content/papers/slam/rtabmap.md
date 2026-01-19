@@ -1,5 +1,7 @@
 +++
 title = "Rtabmap"
+[extra]
+status = "draft"
 +++
 
 RTAB-Map as an Open-Source Lidar and Visual SLAM Library for Large-Scale and Long-Term Online Operation

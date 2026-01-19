@@ -1,6 +1,10 @@
 +++
 title = "ORB-SLAM2"
+[extra]
+status = "wip"
 +++
+
+{{ paper(doi="10.1109/TRO.2017.2705103", pdf="orb-slam-2.pdf") }}
 
 [ORB-SLAM2: an Open-Souce SLAM System for Monocular, Stereo and RGB-D Cameras]
 

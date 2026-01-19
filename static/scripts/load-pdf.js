@@ -77,9 +77,29 @@ for (const el of document.getElementsByClassName("pdf-viewer")) {
       });
     }
   }
+  function onFirst() {
+    if (parseInt(pageAttr.nodeValue) != 1) {
+      callOperation(() => {
+        pageAttr.nodeValue = 1;
+        pageEl.innerHTML = pageAttr.nodeValue;
+        renderThis();
+      });
+    }
+  }
+  function onLast() {
+    if (parseInt(pageAttr.nodeValue) != parseInt(pageCountAttr.nodeValue)) {
+      callOperation(() => {
+        pageAttr.nodeValue = parseInt(pageCountAttr.nodeValue);
+        pageEl.innerHTML = pageAttr.nodeValue;
+        renderThis();
+      });
+    }
+  }
 
   el.getElementsByClassName("pdf-viewer-prev")[0].addEventListener("click", onPrev);
   el.getElementsByClassName("pdf-viewer-next")[0].addEventListener("click", onNext);
+  el.getElementsByClassName("pdf-viewer-first")[0].addEventListener("click", onFirst);
+  el.getElementsByClassName("pdf-viewer-last")[0].addEventListener("click", onLast);
   canvas.addEventListener(
     "click",
     function(event) {

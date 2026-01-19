@@ -47,14 +47,6 @@ for (const el of document.getElementsByClassName("paper-summary")) {
       makeField("URL", `<a href='${url}'>${url}</a>`);
     }
 
-    if ("reference" in data) {
-      let references = "";
-      for (const item of data["reference"]) {
-        references += `<div>`
-        // makeField("References", data["references-count"]);
-      }
-    }
-
     el.innerHTML = html;
   });
 }
