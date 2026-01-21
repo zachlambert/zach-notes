@@ -83,7 +83,7 @@ If we write these out using their basis vectors we get:
 $$
 u_j\epsilon^j \cdot v^ie_i = (u_jv^i) \epsilon_j \cdot e_i
 $$
-where we must define the value of $\epsilon_j \cdot e_i$ for each pair of covector/vecotr.
+where we must define the value of $\epsilon_j \cdot e_i$ for each pair of covector/vector.
 
 We can define a **dual space** $V^\star$ which is the specific covector space that pairs with a vector space $V$ such that the basis covectors/vectors satisfy:
 $$

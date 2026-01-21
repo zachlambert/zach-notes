@@ -1,6 +1,6 @@
 +++
-title = "Gaussian Distributions"
-weight = 2
+title = "Gaussian distributions"
+weight = 4
 description="Introduce the Gaussian distribution, why it's useful, and give some key results."
 [extra]
 status = "wip"
@@ -38,7 +38,7 @@ $$
 \begin{align*}
 X &\sim \mathcal{N}(\mu_x, \Sigma_x) \\\\
 Y &= AX + b \\\\
-&\sim \mathcal{N}(\mu_y, \Sigma_y) \quad \mu_y = A\mu_x, \Sigma_y = A\Sigma_x A^T
+&\sim \mathcal{N}(\mu_y, \Sigma_y)
 \end{align*}
 $$
 where:

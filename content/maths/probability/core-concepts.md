@@ -44,7 +44,7 @@ TODO: Define more precisely
 
 ## Defining distributions for differentiable manifolds
 
-Often we deal with non-euclidean state spaces (ie: rotations), or in general a _differentiable manifold_.
+Often we deal with non-euclidean state spaces (eg: rotations), or in general a _differentiable manifold_.
 
 For a manifold $M$ A probability distribution can be defined in the tangent space $\Delta x \in T_xM$ (informally, just $\mathbb{R}^n$) for a given point $x^\star \in M$, such that:
 $$

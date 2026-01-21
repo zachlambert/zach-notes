@@ -60,9 +60,10 @@ main {
     margin: 0.6em 0 0.6em 0;
   }
 
-  &>p.details {
-    margin-bottom: 0.9em;
-    color: hsl(0, 0, 50);
+  .details {
+    color: hsl(0, 0, 40);
+    padding-left: 15px;
+    border-left: 2px hsl(0, 0, 80) solid;
   }
 
   span.katex-display {
@@ -72,7 +73,8 @@ main {
 
   details.aside {
     border: 2px hsl(0, 0, 90) solid;
-    margin-top: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 
     &>div>h2:first-child, &>div>h3:first-child {
       background: 0;

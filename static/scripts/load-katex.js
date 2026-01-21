@@ -6,6 +6,8 @@ macros["\\Mat"] = "\\left[\\begin{matrix}#1\\end{matrix}\\right]";
 macros["\\WrapS"] = "\\left[#1\\right]";
 macros["\\WrapP"] = "\\left(#1\\right)";
 macros["\\WrapC"] = "\\left\\{#1\\right\\}";
+macros["\\Exp"] = "\\textrm{Exp}";
+macros["\\Log"] = "\\textrm{Log}";
 
 document.addEventListener("DOMContentLoaded", function () {
   renderMathInElement(document.body, {
