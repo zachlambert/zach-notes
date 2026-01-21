@@ -4,16 +4,18 @@ sort_by = "weight"
 +++
 
 My objective with this website is to collect my personal notes in one place, such that:
+
 - It helps me organise them and keep track of things.
 - It provides a good reference for myself in the future, as well as for anyone else who could find it useful.
 
 The code for the website is publicly available [here](https://github.com/zachlambert/zach-notes).
 
 Since it's an active document, I will often create pages that are incomplete or placeholders. The status of each page will be displayed in the contents and it's title. The following label are used:
-- STUB: Placeholder page with very little content, if any.
-- WIP (Work-in-progress): Have done some work on this page, but needs more work.
-- DRAFT: Mostly done, but rough and may need further review.
-- DONE: No more work needed, but may make further changes in the future if I want.
+
+- **STUB**: Placeholder page with very little content, if any.
+- **WIP** (Work-in-progress): Rough notes, there so to keep track of ideas/concepts, but still to be written up properly and checked. Often if I'm still learning the topic it may contain errors/misunderstandings.
+- DRAFT: Better organised and mostly correct, but still needs polishing.
+- DONE: At a state I'm happy to leave it at (although may still make ammendments as needed)
 
 ## Maths
 

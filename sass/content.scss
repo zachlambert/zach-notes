@@ -72,6 +72,12 @@ main {
 
   details.aside {
     border: 2px hsl(0, 0, 90) solid;
+    margin-top: 20px;
+
+    &>div>h2:first-child, &>div>h3:first-child {
+      background: 0;
+      margin-top: 0;
+    }
 
     summary {
       cursor: pointer;

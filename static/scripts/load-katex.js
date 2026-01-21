@@ -1,10 +1,19 @@
 // Render LaTeX via katex
+
+const macros = [];
+macros["\\R"] = "\\mathbb{R}";
+macros["\\Mat"] = "\\left[\\begin{matrix}#1\\end{matrix}\\right]";
+macros["\\WrapS"] = "\\left[#1\\right]";
+macros["\\WrapP"] = "\\left(#1\\right)";
+macros["\\WrapC"] = "\\left\\{#1\\right\\}";
+
 document.addEventListener("DOMContentLoaded", function () {
   renderMathInElement(document.body, {
     delimiters: [
       { left: "$$", right: "$$", display: true },
       { left: "$", right: "$", display: false },
     ],
+    macros: macros,
     throwOnError: false,
   });
 });
