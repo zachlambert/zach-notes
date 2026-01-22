@@ -7,14 +7,13 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
 const queueOperations = []
 let renderInProgress = false;
 
-function renderPdf(url, page, pageCountAttr, pageCountEl, canvas) {
+function renderPdf(url, pdfState, canvas) {
   renderInProgress = true;
   pdfjsLib
     .getDocument(url)
     .promise.then(function (doc) {
-      pageCountAttr.nodeValue = doc.numPages;
-      pageCountEl.innerHTML = doc.numPages;
-      return doc.getPage(page);
+      pdfState.pageCount = doc.numPages;
+      return doc.getPage(pdfState.page);
     })
     .then(function (page) {
       const viewport = page.getViewport({ scale: 1.5 });
@@ -35,20 +34,39 @@ function renderPdf(url, page, pageCountAttr, pageCountEl, canvas) {
     });
 }
 
+function getPdfState(url) {
+  if (!localStorage.getItem("pdfStates")) {
+    localStorage.setItem("pdfStates", "{}");
+  }
+  const pdfStates = new Map(Object.entries(JSON.parse(localStorage.getItem("pdfStates"))));
+  if (!pdfStates.has(url)) {
+    return {
+      page: 1,
+      pageCount: 1,
+      open: false
+    };
+  }
+  return pdfStates.get(url);
+}
+function updatePdfState(url, pdfState) {
+  const pdfStates = new Map(Object.entries(JSON.parse(localStorage.getItem("pdfStates"))));
+  pdfStates.set(url, pdfState);
+  localStorage.setItem("pdfStates", JSON.stringify(Object.fromEntries(pdfStates)));
+}
+
 for (const el of document.getElementsByClassName("pdf-viewer")) {
-  const urlAttr = el.attributes["data-url"];
-  const pageAttr = el.attributes["data-page"];
-  const pageCountAttr = el.attributes["data-page-count"];
+  const url = el.attributes["data-url"].nodeValue;
+  const pdfState = getPdfState(url);
+  el.open = pdfState.open;
   const canvas = el.getElementsByTagName("canvas")[0];
   const pageEl = el.getElementsByClassName("pdf-viewer-page")[0]
+  pageEl.innerHTML = pdfState.page;
   const pageCountEl = el.getElementsByClassName("pdf-viewer-page-count")[0]
-  pageCountAttr.nodeValue = 1;
-  pageEl.innerHTML = 1;
-  pageCountAttr.nodeValue = 1;
-  pageCountEl.innerHTML = 1;
+  pageCountEl.innerHTML = pdfState.pageCount;
 
   function renderThis() {
-    renderPdf(urlAttr.nodeValue, parseInt(pageAttr.nodeValue), pageCountAttr, pageCountEl, canvas);
+    renderPdf(url, pdfState, canvas);
+    pageCountEl.innerHTML = pdfState.pageCount;
   };
   renderThis();
 
@@ -60,38 +78,42 @@ for (const el of document.getElementsByClassName("pdf-viewer")) {
     }
   }
   function onPrev() {
-    if (parseInt(pageAttr.nodeValue) > 1) {
+    if (parseInt(pdfState.page) > 1) {
       callOperation(() => {
-        pageAttr.nodeValue = parseInt(pageAttr.nodeValue) - 1;
-        pageEl.innerHTML = pageAttr.nodeValue;
+        pdfState.page = parseInt(pdfState.page) - 1;
+        pageEl.innerHTML = pdfState.page;
         renderThis();
+        updatePdfState(url, pdfState);
       });
     }
   }
   function onNext() {
-    if (parseInt(pageAttr.nodeValue) < parseInt(pageCountAttr.nodeValue)) {
+    if (parseInt(pdfState.page) < parseInt(pdfState.pageCount)) {
       callOperation(() => {
-        pageAttr.nodeValue = parseInt(pageAttr.nodeValue) + 1;
-        pageEl.innerHTML = pageAttr.nodeValue;
+        pdfState.page = parseInt(pdfState.page) + 1;
+        pageEl.innerHTML = pdfState.page
         renderThis();
+        updatePdfState(url, pdfState);
       });
     }
   }
   function onFirst() {
-    if (parseInt(pageAttr.nodeValue) != 1) {
+    if (parseInt(pdfState.page) != 1) {
       callOperation(() => {
-        pageAttr.nodeValue = 1;
-        pageEl.innerHTML = pageAttr.nodeValue;
+        pdfState.page = 1;
+        pageEl.innerHTML = pdfState.page
         renderThis();
+        updatePdfState(url, pdfState);
       });
     }
   }
   function onLast() {
-    if (parseInt(pageAttr.nodeValue) != parseInt(pageCountAttr.nodeValue)) {
+    if (parseInt(pdfState.page) != parseInt(pdfState.pageCount)) {
       callOperation(() => {
-        pageAttr.nodeValue = parseInt(pageCountAttr.nodeValue);
-        pageEl.innerHTML = pageAttr.nodeValue;
+        pdfState.page = parseInt(pdfState.pageCount);
+        pageEl.innerHTML = pdfState.page
         renderThis();
+        updatePdfState(url, pdfState);
       });
     }
   }
@@ -110,4 +132,9 @@ for (const el of document.getElementsByClassName("pdf-viewer")) {
       }
     }
   );
+
+  el.addEventListener("toggle", function() {
+    pdfState.open = el.open;
+    updatePdfState(url, pdfState);
+  });
 }

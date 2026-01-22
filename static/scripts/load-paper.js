@@ -15,7 +15,6 @@ for (const el of document.getElementsByClassName("paper-summary")) {
     return response.json();
   }).then((response) => {
     const data = response.message;
-    console.log(data);
     let html = "";
     function makeField(key, value) {
       html += `<div>${key}</div><div>${value}</div>`
