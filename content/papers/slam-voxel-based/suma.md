@@ -1,10 +1,15 @@
 +++
-title = "Surfel-based tracking"
+title = "Surfel-based mapping (SUMA)"
 [extra]
 status = "wip"
 +++
 
-{{ paper(doi="10.15607/RSS.2018.XIV.016", pdf="surfel-based-slam.pdf")}}
+Original paper:
+{{ paper(doi="10.15607/RSS.2018.XIV.016", pdf="suma.pdf")}}
+
+Follow-up: Adds semantic labels to voxel map, which helps exclude dynamic obstacles from mapping.  
+**TODO**: Move to separate page, this page covers original paper only. 
+{{ paper(doi="10.1109/IROS40897.2019.8967704", pdf="suma++.pdf") }}
 
 # Overview
 
