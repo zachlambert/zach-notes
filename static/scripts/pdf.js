@@ -16,7 +16,7 @@ function renderPdf(url, pdfState, canvas) {
       return doc.getPage(pdfState.page);
     })
     .then(function (page) {
-      const viewport = page.getViewport({ scale: 1.5 });
+      const viewport = page.getViewport({ scale: 1.4 });
       canvas.height = viewport.height;
       canvas.width = viewport.width;
 

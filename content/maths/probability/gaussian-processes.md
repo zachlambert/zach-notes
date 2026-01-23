@@ -1,6 +1,6 @@
 +++
 title = "Gaussian processes"
-weight = 5
+weight = 11
 [extra]
 status = "wip"
 +++

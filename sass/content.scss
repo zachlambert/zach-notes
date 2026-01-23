@@ -18,12 +18,7 @@ main {
     }
   }
 
-  h2 {
-    margin-top: 30px;
-    margin-bottom: 10px;
-  }
-
-  h3 {
+  h1:not(.page-title), h2, h3 {
     margin-top: 30px;
     margin-bottom: 10px;
   }
@@ -64,6 +59,7 @@ main {
     color: hsl(0, 0, 40);
     padding-left: 15px;
     border-left: 2px hsl(0, 0, 80) solid;
+    margin-bottom: 15px;
   }
 
   span.katex-display {

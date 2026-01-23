@@ -32,6 +32,43 @@ $$
 p(x) = \lim_{\delta x \to 0} \frac{P(x < X < x + \delta x)}{\delta x}
 $$
 
+## Expectation, mean, variance, moments
+
+The **expectation** $\mathbb{E}(f(X))$ of the function $f(X)$ is the value:
+$$
+\mathbb{E}(f(X)) = \int_x f(x) p(x) dx
+$$
+
+The **mean** is defined as $\mu = \mathbb{E}(X)$:
+$$
+\mathbb{E}(X) = \int_x x p(x) dx
+$$
+
+The **variance** is defined as $\sigma^2 = \mathbb{V}(X)$:
+$$
+\mathbb{V}(X) = \mathbb{E}((X - \mathbb{E}(X))^2) = \int_x (x - \mu)^2 p(x) dx
+$$
+
+The **n-th raw moment** is defined as:
+$$
+\mathbb{E}(X^n) = \int_x x^n p(x) dx
+$$
+such that the 1st moment is the mean.
+
+The **n-th central moment** is defined as:
+$$
+\mathbb{E}((X - \mathbb{E}(X))^n) = \int_x (x - \mu)^n p(x) dx
+$$
+such that the 2nd central moment is the variance.
+
+{{ details_begin() }}
+Other specific terms for moments are:
+- Skewness = third central moment
+- Kurtosis = fourth central moment
+
+These terms are relevant for statistics, but not really relevant in robotics.
+{{ details_end() }}
+
 ## Vector state spaces
 
 The same idea applies for $x \in \mathbb{R}^n$, where $p(x)$ is defined such that:
@@ -57,3 +94,7 @@ $$
 In other words, to sample a random variable $x$:
 - Draw the local displacement vector $\Delta x$ from a distribution on $\mathbb{R}^n$ defined for this particular point $x^\star$.
 - Use the box-plus operation to move along the manifold by this displacement to get the new sample $x$.
+
+## Random processes
+
+TODO: Brief note on what a random process is. However, we are only ever going to deal with gaussian processes which are much simpler, so don't need to study this in any depth.
