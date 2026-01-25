@@ -1,6 +1,6 @@
 +++
 title = "Probability models"
-weight = 3
+weight = 20
 [extra]
 status = "wip"
 +++

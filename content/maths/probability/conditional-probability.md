@@ -1,5 +1,5 @@
 +++
-title = "Conditional probability"
+title = "Conditional probability and inference"
 weight = 2
 [extra]
 status = "wip"
@@ -69,8 +69,8 @@ However, often we are just using this concept to illustrate certain ideas/relati
 {{ details_end() }}
 
 The entropy captures the **uncertainty** in a random variable $X$:
-- As $p(x) -> \delta(x)$, $h(X) \to -\infty$
-- As $p(x) -> $ uniform over $x \in X$, $h(x) \to \infty$
+- As $p(x) \to \delta(x)$, $h(X) \to -\infty$
+- As $p(x) \to $ uniform over $x \in X$, $h(x) \to \infty$
 
 It is a relative term, you can only measure the relative entropy between distributions.
 {{ details_begin() }}
@@ -85,3 +85,60 @@ $$
 so as the gaussian becomes more concentrated and $\sigma$ approaches zero, the entropy tends to $-\infty$.
 
 TODO: Conditional entropy and mutual information, use this to illustrate the idea of conditional probability describing how the observation of one variable can give information about another.
+
+# Bayesian inference
+
+Bayesian inference is the concept of using conditional probability to make inferences.
+
+Have a variable $X$ we wish to estimate and an observation $Y$.
+
+The **prior distribution** $p(x)$ represents the knowledge of $X$ prior to observing $Y$. 
+
+The **likelihood** $p(y|x)$ is the likelihood of observing $y$ for a given $x$.
+
+The **posterior distribution** $p(x|y)$ represents the knowledge of $x$ after observing $y$ as is defined as:
+$$
+p(x|y) \propto p(y|x)p(x)
+$$
+- Equal to the product of the prior distribution and likelihood distribution
+- Don't care about the normalisation factor usually
+
+Often we deal with log-probabilities (eg: the **log-likelihood** $lnp(y|x)$) giving:
+$$
+lnp(x|y) = lnp(x) + lnp(y|x) + c
+$$
+
+The use case of this is to find an **estimate** for the value of $x$.
+
+The **maximum a-priori estimate** (prior estimate) is:
+$$
+\begin{align*}
+x^\star &= \argmax_x p(x) \\\\
+&= \argmax_x \ln p(x)
+\end{align*}
+$$
+
+The **maximum likelihood estimate** (ML estimate) is:
+$$
+\begin{align*}
+x^\star &= \argmax_x p(y|x) \\\\
+&= \argmax_x \ln p(y|x)
+\end{align*}
+$$
+
+The **maximum a posteriori estimate** (MAP estimate) is:
+$$
+\begin{align*}
+x^\star &= \argmax_x p(x|y) \\\\
+&= \argmax_x p(y|x)p(x) \\\\
+&= \argmax_x \ln p(y|x) + \ln p(x)
+\end{align*}
+$$
+
+{{ details_begin() }}
+
+In both cases the maximisation can be done over the log-probabilities instead since $\ln(\cdot)$ is a monotonic function and doesn't change the maximisation result.
+
+{{ details_end() }}
+
+Estimation should always use the MAP estimate. If there is no prior information, then this collapses to the ML estimate since $p(x)$ is constant and doesn't affect the maximisation.

@@ -1,6 +1,6 @@
 +++
 title = "Gaussian distributions"
-weight = 10
+weight = 3
 description="Introduce the Gaussian distribution, why it's useful, and give some key results."
 [extra]
 status = "wip"

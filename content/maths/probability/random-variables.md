@@ -16,6 +16,8 @@ $$
 
 Informally, a probability distribution is defined as the mapping $P(\Omega)$ which maps a **subset** $E \in \Omega$ to a real-valued number in $\mathbb{R}$.
 
+A **random variable** is just the combination of state space and probability distribution, where the random variable $X$ represents the value in $\Omega$ which is drawn according to the probability distribution $P(\Omega)$.
+
 For a discrete state space, we can define a probability **mass** function (PMF) $p(x)$, such that:
 $$
 P(E) = \sum_{x \in E} p(x)
@@ -94,7 +96,3 @@ $$
 In other words, to sample a random variable $x$:
 - Draw the local displacement vector $\Delta x$ from a distribution on $\mathbb{R}^n$ defined for this particular point $x^\star$.
 - Use the box-plus operation to move along the manifold by this displacement to get the new sample $x$.
-
-## Random processes
-
-TODO: Brief note on what a random process is. However, we are only ever going to deal with gaussian processes which are much simpler, so don't need to study this in any depth.
