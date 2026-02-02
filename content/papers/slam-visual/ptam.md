@@ -18,4 +18,11 @@ This paper aims to track without any prior map at all.
 
 The specific application for this paper is to build a map, and then allow inserting virtual objects into it for AR workspaces.
 
+### Method overview in the context of SLAM
 
+Method can be summarised as:
+- Tracking and mapping are separated and run in two parallel threads
+- Mapping is based on keyframes, which are processed using batch techniques (bundle adjustment)
+- Map is densely initialised from a stereo pair (5-point algorithm)
+- New points are initialised with an epipolar search
+- Large numbers (thousands) of points are mapped

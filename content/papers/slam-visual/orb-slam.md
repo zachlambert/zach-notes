@@ -34,15 +34,15 @@ The first real-time applicatoin of BA was:
 Several factors severely limit the application:
 
 - Lack of loop closure
-- Inadequaite handling of occlusions
-- Low invarance to the viewpoint of the relocalization (?? don't know what this means)
+- Inadequate handling of occlusions
+- Low invariance to the viewpoint of the relocalisation (?? don't know what this means)
 
 This method builds upon:
 
 - Main ideas of PTAM
 - Place recognition work: `D. Galvez-Lopez and J. D. Tard ´ os, “Bags of binary words for fast place recognition in image sequences`
 - Scale aware monocular SLAM: `H. Strasdat, J. M. M. Montiel, and A. J. Davison, “Scale drift-aware large scale monocular SLAM`
-- Using covisibilityinformation to help for large-scale operation
+- Using covisibility information to help for large-scale operation
 
 Main constributions of Orb-SLAM:
 
@@ -147,7 +147,7 @@ These scales are defined relative to the world frame, such that after the optimi
 - All feature positions are re-scaled accordingly
 - Loop closure similarities are re-computed?
 
-This method is a rough approximation to the full BA optiisation, but is more efficient.
+This method is a rough approximation to the full BA optimisation, but is more efficient.
 
 Note:
 
