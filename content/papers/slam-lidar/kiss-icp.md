@@ -4,7 +4,7 @@ title = "KISS ICP"
 status = "wip"
 +++
 
-{{ paper(doi="10.1109/LRA.2023.3236571", file="kiss-icp.pdf") }}
+{{ paper(doi="10.1109/LRA.2023.3236571", pdf="kiss-icp.pdf") }}
 
 # Summary
 
