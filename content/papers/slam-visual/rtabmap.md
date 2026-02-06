@@ -4,6 +4,10 @@ title = "Rtabmap"
 status = "draft"
 +++
 
+{{ paper(
+doi="10.1002/rob.21831"
+pdf="rtabmap.pdf"
+)}}
 RTAB-Map as an Open-Source Lidar and Visual SLAM Library for Large-Scale and Long-Term Online Operation
 
 <https://introlab.github.io/rtabmap/>
