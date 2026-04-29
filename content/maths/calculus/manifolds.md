@@ -158,7 +158,7 @@ $$
 \begin{align*}
 \mathcal{Ad}\_{X_2}(\mathcal{Ad}\_{X_1}(u)) &= X_2X_1 u X_1^{-1}X_2^{-1} \\\\
 &= (X_2 X_1) u (X_2 X_1)^{-1} \\\\
-&= \mathcal{Ad}_{X_2X_1}
+&= \mathcal{Ad}_{X_2X_1}(u^\prime)
 \end{align*}
 $$
 And for the matrix form:
@@ -222,7 +222,7 @@ $$
 
 ### Jacobian of the $\boxplus$ operation
 
-For $^\prime = x \boxplus u$ we can define two jacobians:
+For $x^\prime = x \boxplus u$ we can define two jacobians:
 $$
 J^\boxplus_x = \frac{dx^\prime}{dx} = \lim_{\delta x \to 0} \frac{\WrapS{(x \boxplus \delta x) \boxplus u}\boxminus\WrapS{x \boxplus u}}{\delta x}
 $$
