@@ -128,5 +128,5 @@ However, I can still envision cases where it would fail that aren't represented 
     - Actually, the part about resetting voxels if there is deviation might fix this
     - Might work similar to octomap/similar where if a dynamic obstacle moves, the voxel is simply erased.
     - Would need to test how this performs
-- This is a pure odometry approach and will experience drift - see [FAST-LIVO2](../fast-livo2) for how the method is incorporated into a full SLAM algorithm.
+- This is a pure odometry approach and will experience drift - see [VoxelSLAM](../voxel-slam) for how the method is incorporated into a full SLAM algorithm.
 - Does it support any type of lidar? (eg: limited fov)
