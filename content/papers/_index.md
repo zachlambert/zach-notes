@@ -2,7 +2,6 @@
 title = "Papers"
 description = "Collecting and summarising useful research papers."
 weight = 4
-sort_by = "weight"
 +++
 
 ## How I approach collecting research papers
