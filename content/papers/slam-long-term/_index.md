@@ -1,4 +1,4 @@
 +++
 title = "SLAM: Long-term"
-weight = 5
+sort_by = "title"
 +++
