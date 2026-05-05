@@ -1,4 +1,4 @@
 +++
-title = "Topological maps"
+title = "Topological Maps"
 sort_by = "title"
 +++

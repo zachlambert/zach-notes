@@ -1,5 +1,5 @@
 +++
-title = "Reviews - SLAM"
+title = "SLAM - Reviews"
 sort_by = "title"
 weight = 7
 +++
