@@ -1,5 +1,5 @@
 +++
-title = "FAST-LIO"
+title = "FAST-LIO and FAST-LIO2"
 +++
 
 {{ paper(
@@ -13,3 +13,5 @@ pdf="fast-lio2.pdf"
 )}}
 
 Repo: <https://github.com/hku-mars/FAST_LIO>
+
+NOTE: Also found this repo which extends it to perform SLAM <https://github.com/gisbi-kim/FAST_LIO_SLAM>

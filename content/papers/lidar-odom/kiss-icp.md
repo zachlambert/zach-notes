@@ -1,5 +1,5 @@
 +++
-title = "KISS ICP"
+title = "KISS-ICP"
 [extra]
 status = "wip"
 +++

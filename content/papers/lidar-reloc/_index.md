@@ -1,5 +1,5 @@
 +++
 title = "Lidar Relocalisation"
-weight = 6
+weight = 7
 sort_by = "title"
 +++
