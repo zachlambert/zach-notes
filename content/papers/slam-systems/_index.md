@@ -1,3 +1,4 @@
 +++
-title = "SLAM - Multimodal"
+title = "SLAM Systems"
+weight = 16
 +++
