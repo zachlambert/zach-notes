@@ -2,15 +2,13 @@
 title = "GLIM / hdl_graph_slam"
 +++
 
-## Offline SLAM and online localisation
+## Original work: Offline SLAM and online localisation
 
-Provided two packages:
-- Offline SLAM to build a map: <https://github.com/koide3/hdl_graph_slam>
-- Online localisation, which tracks against the map: <https://github.com/koide3/hdl_localization>
+Original repo for offline SLAM: <https://github.com/koide3/hdl_graph_slam>
 
-## Interactive SLAM
+Online localisation: <https://github.com/koide3/hdl_localization>
 
-<https://github.com/koide3/interactive_slam>
+Interactive SLAM (user can correct for errors, etc): <https://github.com/koide3/interactive_slam>
 
 {{ paper(
 doi="10.1109/LRA.2020.3028828",
@@ -28,14 +26,28 @@ This uses a fixed-lag smoother with lidar odometry and alignment against the map
 
 Unfortunately, it is closed source though.
 
-Relevant papers linked against on the GLIL website:
+Relevant papers linked against on the GLIM/GLIL website:
 
+### GLIM papers
+
+**Main GLIM paper**
 {{ paper(
 doi="10.1109/ICRA46639.2022.9812385",
-pdf="glil-1.pdf"
+pdf="glim.pdf"
+)}}
+
+**Other papers**
+{{ paper(
+doi="10.1109/LRA.2021.3113043"
 )}}
 
 {{ paper(
+doi="10.1109/ICRA48506.2021.9560835"
+)}}
+
+### GLIL papers
+
+{{ paper(
 doi="10.1109/ICRA57147.2024.10611195",
-pdf="glil-2.pdf"
+pdf="glil.pdf"
 )}}

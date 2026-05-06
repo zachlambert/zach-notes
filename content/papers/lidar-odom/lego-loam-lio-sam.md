@@ -13,3 +13,5 @@ Follow-up work, builds upon LeGO-LOAM
 doi="10.1109/IROS45743.2020.9341176"
 pdf="lio-sam.pdf"
 )}}
+
+NOTE: LIO-SAM supports loop-closure constraints
