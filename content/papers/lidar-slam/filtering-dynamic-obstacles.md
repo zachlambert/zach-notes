@@ -2,6 +2,8 @@
 title = "Filtering dynamic obstacles"
 +++
 
+For a given SLAM session, how can a map be built that removes dynamic obstacles?
+
 ## Meta-rooms
 
 {{ paper(

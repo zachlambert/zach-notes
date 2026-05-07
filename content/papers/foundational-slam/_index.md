@@ -1,5 +1,5 @@
 +++
-title = "SLAM - Foundational"
+title = "Foundational - SLAM"
 sort_by = "title"
 weight = 10
 [extra]

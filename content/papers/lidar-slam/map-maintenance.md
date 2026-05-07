@@ -1,12 +1,12 @@
 +++
-title = "Map maintenance"
+title = "SLAM with map updates"
 +++
 
 ## Multiple relative pose graphs for robust cooperative mapping
 
 {{ paper(
 doi="10.1109/ROBOT.2010.5509154",
-pdf="robust-cooperative-mapping.pdf"
+pdf="map-maintenance/robust-cooperative-mapping.pdf"
 )}}
 
 This is a commonly cited paper for multi-session SLAM and introduces the idea of combining pose graphs between sessions via:
@@ -17,7 +17,7 @@ This is a commonly cited paper for multi-session SLAM and introduces the idea of
 
 {{ paper(
 doi="10.1109/RCAR.2018.8621770",
-pdf="multi-session-map-construction.pdf"
+pdf="map-maintenance/multi-session-map-construction.pdf"
 )}}
 
 System overview:
@@ -32,7 +32,7 @@ System overview:
 
 {{ paper(
 doi="10.1109/ICRA46639.2022.9811916",
-pdf="lt-mapper.pdf"
+pdf="map-maintenance/lt-mapper.pdf"
 )}}
 
 Similar approach to the above paper, but uses the method from [Meta-rooms](../filtering-dynamic-obstacles#meta-rooms)
@@ -43,7 +43,7 @@ BIM-SLAM: <https://github.com/mac137/ConSLAM>
 
 {{ paper(
 doi="10.22260/ISARC2023/0070",
-pdf="bim-slam-original.pdf"
+pdf="map-maintenance/bim-slam.pdf"
 )}}
 
 ConSLAM (dataset): <https://github.com/mac137/ConSLAM>
@@ -56,5 +56,5 @@ SLAM2REF: <https://github.com/MigVega/SLAM2REF>
 
 {{ paper(
 doi="10.1007/s41693-024-00126-w",
-pdf="bim-slam-slam2ref.pdf"
+pdf="map-maintenance/slam2ref.pdf"
 )}}

@@ -1,5 +1,0 @@
-+++
-title = "Lidar SLAM (Lifelong)"
-weight = 6
-sort_by = "title"
-+++

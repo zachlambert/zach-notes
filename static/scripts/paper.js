@@ -19,13 +19,20 @@ function sendRequest() {
   fetch(url)
     .then((response) => {
       if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+        return null;
       }
       return response.json();
     })
     .then((response) => {
+      if (!response) {
+        el.innerHTML = "Failed to fetch data";
+        sendRequest();
+        return;
+      }
+
       const data = response.message;
       let html = "";
+
       function makeField(key, value) {
         html += `<div>${key}</div><div>${value}</div>`;
       }
