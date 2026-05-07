@@ -1,6 +1,8 @@
 +++
-title = "Lidar bundle adjustment"
+title = "Globally consistent alignment"
 +++
+
+## Lidar bundle adjustment
 
 The core idea of "lidar bundle adjustment" is as follows:
 - We define lidar "features" to be planes and lines
@@ -41,3 +43,12 @@ pdf="balm2.pdf"
 doi="10.1109/LRA.2023.3238902",
 pdf="hba.pdf"
 )}}
+
+## Globally consistent 3D lidar mapping with GPU-accelerated GICP matching cost factors
+
+{{ paper(
+doi="10.1109/LRA.2021.3113043",
+pdf="koide-global-mapping.pdf"
+)}}
+
+Similar idea to BALM but uses GPU-acceleration.

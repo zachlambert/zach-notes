@@ -1,5 +1,5 @@
 +++
 title = "Visual SLAM"
 sort_by = "title"
-weight = 16
+weight = 15
 +++

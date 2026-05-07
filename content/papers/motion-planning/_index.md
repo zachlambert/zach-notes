@@ -1,5 +1,5 @@
 +++
 title = "Motion Planning"
 sort_by = "title"
-weight = 8
+weight = 7
 +++

@@ -37,13 +37,6 @@ pdf="glim.pdf"
 )}}
 
 **Other papers**
-{{ paper(
-doi="10.1109/LRA.2021.3113043"
-)}}
-
-{{ paper(
-doi="10.1109/ICRA48506.2021.9560835"
-)}}
 
 ### GLIL papers
 
