@@ -17,7 +17,9 @@ The key differences with the visual case is:
 - Unlike visual BA, correspondances between points for each scan aren't found using descriptors, they are found purely based on what points are nearby, so are highly dependent on a good initial estimate.
 - We don't jointly optimise over the feature parameters, since these are expressed as a function of the lidar poses. 
 
-I think it's more similar to photometric optimisation in direct visual odometry which also optimises over an objective function on the sensor poses only.
+Rather than "bundle adjustment", I think it's more sensible to think of it as multi-way registration (ie: trying to align multiple point clouds, rather than just one pair).
+
+It's also more similar to photometric optimisation in direct visual odometry which also optimises over an objective function on the sensor poses only.
 
 ## Original BALM paper
 

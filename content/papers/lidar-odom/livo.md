@@ -1,13 +1,15 @@
 +++
-title = "FAST-LIVO2"
+title = "LIVO"
 +++
+
+Lidar-inertial-visual odometry
+
+## FAST-LIVO2
 
 {{ paper(
 doi="10.1109/TRO.2024.3502198"
 pdf="fast-livo2.pdf"
 )}}
-
-# Summary
 
 Essentially the same idea as [Ref 14](../adaptive-voxel-mapping-2022) but also adds visual odometry as a separate update step after the lidar alignment.
 
