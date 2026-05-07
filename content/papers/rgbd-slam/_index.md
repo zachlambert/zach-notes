@@ -1,5 +1,5 @@
 +++
 title = "RGBD SLAM"
 sort_by = "title"
-weight = 12
+weight = 9
 +++

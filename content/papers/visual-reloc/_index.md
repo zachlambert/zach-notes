@@ -1,5 +1,5 @@
 +++
 title = "Visual Relocalisation"
 sort_by = "title"
-weight = 19
+weight = 15
 +++

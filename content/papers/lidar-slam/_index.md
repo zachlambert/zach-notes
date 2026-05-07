@@ -1,7 +1,7 @@
 +++
 title = "Lidar SLAM"
 sort_by = "title"
-weight = 8
+weight = 5
 [extra]
 status = "wip"
 +++

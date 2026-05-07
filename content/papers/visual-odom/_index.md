@@ -1,5 +1,5 @@
 +++
 title = "Visual Odometry"
-weight = 18
+weight = 14
 sort_by = "title"
 +++

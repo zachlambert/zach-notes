@@ -1,8 +1,8 @@
 +++
-title = "GMapping"
-[extra]
-status = "wip"
+title = "Particle-filter based"
 +++
+
+# GMapping
 
 {{ paper(doi="10.1109/TRO.2006.889486", pdf="grid-mapping-pf.pdf") }}
 
@@ -12,7 +12,9 @@ Only applies to a 2D world with a 2D lidar scanner.
 
 Typically this would be used to construct a 2D occupancy map and then assuming this remains fixed, use AMCL for relocalisation once the map is built.
 
-# Algorithm
+{{ aside_begin(label="Description of algorithm") }}
+
+## Algorithm
 
 Estimate the joint posterior $p(x_{1:t}, m | z_{1:t}, u_{1:t-1})$ for:
 
@@ -86,3 +88,25 @@ Only resample particles when necessary, otherwise you can get rid of useful part
 A metric for how well the particles estimate the posterior distribution is given by the dispersion of the particle weights. ie: If they are all similar, it is a good distribution, but if you have a large spread, then it's poor.
 
 This metric can be evaluated simply. If it falls below a given threshold, then resampling occurs. Otherwise all particles are retained from one timestep to the next.
+
+{{ aside_end() }}
+
+# FastSLAM
+
+{{ paper(
+doi="10.1007/978-3-540-46402-0",
+pdf="fast-slam.pdf"
+) }}
+
+Basically an efficient implementation of the rao-blackwellized particle filter that has $O(M\log K)$ time complexity instead of a naive implementation $O(MK)$, where $M$ = num particles, $K$ = num landmarks.
+
+Unlike [the gmapping approach](../gmapping) which maintains a 2D occupancy map with each particle, this implementation is a 2D **landmark-based** SLAM algorithm.
+
+# Lifelong localization in changing environments
+
+{{ paper(
+doi="10.1177/0278364913502830",
+pdf="lifelong-localization.pdf"
+)}}
+
+Another particle-filter based approach, but this time adapting for changing environments.

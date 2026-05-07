@@ -1,5 +1,5 @@
 +++
 title = "Lidar Odometry"
-weight = 5
+weight = 4
 sort_by = "title"
 +++

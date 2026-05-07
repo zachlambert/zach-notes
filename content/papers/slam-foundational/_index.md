@@ -1,7 +1,7 @@
 +++
 title = "SLAM - Foundational"
 sort_by = "title"
-weight = 14
+weight = 10
 [extra]
 status = "wip"
 +++

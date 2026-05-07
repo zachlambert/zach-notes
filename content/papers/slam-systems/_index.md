@@ -1,5 +1,5 @@
 +++
 title = "SLAM Systems"
-weight = 16
+weight = 12
 sort_by = "title"
 +++
