@@ -58,3 +58,10 @@ SLAM2REF: <https://github.com/MigVega/SLAM2REF>
 doi="10.1007/s41693-024-00126-w",
 pdf="map-maintenance/slam2ref.pdf"
 )}}
+
+## Long-term localisation and mapping for large-scale environments
+
+{{ paper(
+doi="10.1371/journal.pone.0328169",
+pdf="inspection-article.pdf"
+)}}

@@ -15,7 +15,7 @@ pdf="filtering-dynamic-obstacles/meta-rooms.pdf"
 
 {{ paper(
 doi="10.1109/ICRA.2014.6907397",
-pdf="map-maintenance.pdf"
+pdf="filtering-dynamic-obstacles/map-maintenance.pdf"
 )}}
 
 ## ERASOR
