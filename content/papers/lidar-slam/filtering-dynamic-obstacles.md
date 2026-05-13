@@ -21,7 +21,7 @@ pdf="filtering-dynamic-obstacles/map-maintenance.pdf"
 ## ERASOR
 
 {{ paper(
-doi="10.1109/ICRA46639.2022.9811916",
+doi="10.1109/LRA.2021.3061363",
 pdf="filtering-dynamic-obstacles/erasor.pdf"
 )}}
 

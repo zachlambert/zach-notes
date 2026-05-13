@@ -1,6 +1,6 @@
 +++
 title = "Rough thoughts"
-weight = 100
+weight = 101
 +++
 
 Good list of projects here: <https://github.com/introlab/rtabmap/wiki/List-of-Open-Source-SLAM-projects>

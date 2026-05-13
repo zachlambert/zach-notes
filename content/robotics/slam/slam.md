@@ -1,8 +1,6 @@
 +++
 title = "SLAM"
 weight = 20
-[extra]
-status = "wip"
 +++
 
 # Defining the SLAM problem
