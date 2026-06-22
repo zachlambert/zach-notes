@@ -1,17 +1,10 @@
 +++
-title = "Global registration"
+title = "Robust registration"
 +++
 
-## 3D-BBS
+# Analysis of M-estimators for robust ICP
 
 {{ paper(
-doi="10.1109/ICRA57147.2024.10610810",
-pdf="3dbbs.pdf"
-)}}
-
-## TEASER
-
-{{ paper(
-doi="10.1109/TRO.2020.3033695",
-pdf="teaser.pdf"
+doi="10.1109/ICRA.2019.8793791",
+pdf="robust-registration.pdf"
 )}}
