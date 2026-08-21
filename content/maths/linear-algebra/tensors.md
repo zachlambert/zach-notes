@@ -1,6 +1,6 @@
 +++
 title = "Tensors"
-weight = 2
+weight = 60
 description = "Overview of tensors and how to use them."
 [extra]
 status = "wip"

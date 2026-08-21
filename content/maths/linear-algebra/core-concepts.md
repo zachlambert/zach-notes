@@ -80,6 +80,17 @@ $$
 x_1 \cdot x_2 = |x_1||x_2| \cos\theta
 $$
 
+## Weighted norm
+
+You also have the weighted (L2) norm:
+$$
+|x|_W = \sqrt{x^TWx}
+$$
+Or more typically written as the squared weighted norm:
+$$
+|x|_W^2 = x^TWx
+$$
+
 # Linear mappings
 
 For two vector spaces $x \in X$ and $y \in Y$, a linear mapping $f: X \to Y$ (ie: $y = f(x)$) is any mapping where the components $y_i$ can be written as a linear combination of the components of $x_i$:
