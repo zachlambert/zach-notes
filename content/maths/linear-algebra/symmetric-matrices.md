@@ -1,11 +1,11 @@
 +++
-title = "Symmetric and triangular matrices"
+title = "Symmetric matrices"
 weight = 2
 [extra]
 status = "wip"
 +++
 
-## Symmetric and skew-symmetric
+# Symmetry
 
 Symmetric matrix:
 
@@ -56,7 +56,7 @@ $$
 A = A^\star
 $$
 
-### Eigendecomposition
+## Eigendecomposition
 
 All symmetric matrices have an eigenvalue decomposition with:
 - Real eigenvalues
@@ -64,11 +64,12 @@ All symmetric matrices have an eigenvalue decomposition with:
 
 $A = U\Lambda U^T$
 
-## Positive definite, positive semi-definite, etc...
+
+# Positive definiteness
 
 For a symmetric matrix $A \in \mathbb{R}^{n\times n}$ with eigenvalues $\lambda_i$:
 
-For the expression $x^TAx$:
+We can categorise $A$ in different ways depending on what range of values the expression $x^TAx$ (the "quadratic form") can take over all values of $x$:
 
 - **Positive definite (PD)**:
   - $x^TAx > 0 \quad\forall x$

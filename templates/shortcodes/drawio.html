@@ -1,0 +1,20 @@
+{% set path = "media/" %}
+{% for i in range(end = page.components | length - 1) %}
+  {% set_global path = path ~ page.components[i] ~ "/" %}
+{% endfor %}
+{% set path = path ~ file %}
+{% set url = get_url(path=path) %}
+
+{% set mw = width | default(value="100%") %}
+
+<div
+  class="drawio mxgraph"
+  style="max-width: {{ mw }};"
+  data-mxgraph='{
+    "url":"{{ url }}",
+    "lightbox": false,
+    "center": true,
+    "responsive": true,
+    "allow-zoom-in": true
+  }'>
+</div>

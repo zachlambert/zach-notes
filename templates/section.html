@@ -7,7 +7,12 @@
 {% block content %}
 
 <header>
-  <h1 class="page-title">
+  {% if "status" in section.extra %}
+  {% set status = section.extra.status %}
+  {% else %}
+  {% set status = "" %}
+  {% endif %}
+  <h1 class="page-title {{ status }}">
     {{ section.title }}
   </h1>
   {% if section.description %}

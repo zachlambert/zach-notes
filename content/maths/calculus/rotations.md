@@ -43,7 +43,7 @@ Or in terms of the normalized vector $ n $:
 $$R = I + \sin\theta \left(n^\wedge\right) + (1 - \cos\theta)\left(n^\wedge\right)^2 $$
 
 {{ aside_begin(label="Graphical explanation") }}
-{{ image(file="rotations-rodrigues.png", width="400") }}
+{{ image(file="rotations-rodrigues.png", width="400px") }}
 {{ aside_end() }}
 
 This equation is in-fact equal to the **exponential map** of the matrix $\phi^\wedge$:

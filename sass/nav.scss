@@ -1,5 +1,54 @@
 @use 'theme.scss';
 
+// Only shown in the stacked layout, where the navbar can be collapsed.
+#nav-header {
+  display: none;
+}
+
+@media (max-width: theme.$collapse-width) {
+  #nav-header {
+    // A bar occupying its own space above the content, rather than floating
+    // over it. Sticky so the navbar can be opened from anywhere on the page.
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    height: theme.$nav-header-height;
+    padding: 0 20px;
+    background-color: white;
+    border-bottom: 2px hsl(0, 0, 90) solid;
+  }
+
+  #nav-toggle {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+    border: 2px hsl(0, 0, 90) solid;
+    border-radius: 4px;
+    color: theme.$primary-fg-color;
+    font-size: 18px;
+    line-height: 1;
+    user-select: none;
+
+    &::before {
+      content: "\2715"; // ✕
+    }
+
+    &:hover {
+      border-color: theme.$primary-hover-color;
+      color: theme.$primary-hover-color;
+    }
+  }
+
+  html.nav-collapsed #nav-toggle::before {
+    content: "\2630"; // ☰
+  }
+}
+
 #search-query {
   color: hsl(0, 0, 30);
   font-size: 24px;

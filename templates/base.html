@@ -5,6 +5,14 @@
   <meta charset="utf-8" />
   <title>Zach Lambert</title>
 
+  <!-- Applied before first paint, to avoid the navbar flashing when collapsed.
+       Collapsed is the default, so the dropdown doesn't cover the page on load. -->
+  <script>
+    if (localStorage.getItem("navCollapsed") !== "false") {
+      document.documentElement.classList.add("nav-collapsed");
+    }
+  </script>
+
   <link rel="stylesheet" href="{{ get_url(path="base.css") }}">
   <link rel="stylesheet" href="{{ get_url(path="nav.css") }}">
   <link rel="stylesheet" href="{{ get_url(path="content.css") }}">
@@ -42,6 +50,10 @@
   <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.530/web/pdf_viewer.min.css">-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+  <script defer src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+
   <script defer type="module" src="{{ get_url(path="scripts/katex.js") }}">
   </script>
   <script defer type="module" src="{{ get_url(path="scripts/pdf.js") }}">
@@ -52,12 +64,21 @@
   </script>
   <script defer type="module" src="{{ get_url(path="scripts/scroll.js") }}">
   </script>
-
+  <script defer type="module" src="{{ get_url(path="scripts/nav.js") }}">
   </script>
 
 </head>
 
 <body>
+  <header id="nav-header">
+    <button
+      id="nav-toggle"
+      type="button"
+      aria-controls="navbar"
+      aria-expanded="false"
+      aria-label="Show navigation">
+    </button>
+  </header>
   <nav id="navbar">
     <div>
       <h1><a href="{{ get_url(path="/") }}">Zach Lambert</a></h1>

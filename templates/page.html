@@ -7,23 +7,13 @@
 {% block content %}
 
 <header>
-  <h1 class="page-title">
+  {% if "status" in page.extra %}
+  {% set status = page.extra.status %}
+  {% else %}
+  {% set status = "stub" %}
+  {% endif %}
+  <h1 class="page-title {{ status }}">
     {{ page.title }}
-    {% if "status" in page.extra %}
-    {% set status = page.extra.status %}
-    {% else %}
-    {% set status = "stub" %}
-    {% endif %}
-
-    {% if status == "wip" %}
-    [WORK-IN-PROGRESS]
-    {% endif %}
-    {% if status == "stub" %}
-    [STUB]
-    {% endif %}
-    {% if status == "draft" %}
-    [DRAFT]
-    {% endif %}
   </h1>
   {% if page.description %}
   <div class="page-subtitle">

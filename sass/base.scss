@@ -18,6 +18,30 @@ nav {
   max-width: theme.$navbar-width;
 }
 
+// The navbar is only collapsible when stacked. There it drops down from under
+// the header bar and floats over the content, so opening it doesn't move the
+// page around. In the side-by-side layout it is always shown.
+@media (max-width: theme.$collapse-width) {
+  nav {
+    position: fixed;
+    top: theme.$nav-header-height;
+    left: 0;
+    z-index: 10;
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+    max-height: calc(100vh - #{theme.$nav-header-height});
+    max-height: calc(100dvh - #{theme.$nav-header-height});
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0 4px 10px hsla(0, 0, 0, 0.25);
+  }
+
+  html.nav-collapsed nav {
+    display: none;
+  }
+}
+
 main {
   flex-grow: 1;
   max-width: 1100px;

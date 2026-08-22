@@ -7,6 +7,12 @@ main {
     .page-title {
       color: theme.$primary-fg-color;
       font-size: 36px;
+
+      // Scale the status label up to suit the larger title.
+      &::after {
+        font-size: 24px;
+        margin-left: 0.5em;
+      }
     }
 
     .page-subtitle {
@@ -22,6 +28,48 @@ main {
   h1:not(.page-title), h2, h3 {
     margin-top: 30px;
     margin-bottom: 10px;
+  }
+
+  // Status labels on headings, set with `# My heading {.wip}` in markdown.
+  // Omitting the class leaves the heading unlabelled.
+  h1, h2, h3, h4, h5, h6 {
+    &.stub::after,
+    &.wip::after,
+    &.draft::after,
+    &.done::after {
+      display: inline-block;
+      vertical-align: middle;
+      min-width: 3.5em;
+      margin-left: 0.6em;
+      padding: 0 0.3em;
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 1.5em;
+      text-align: center;
+      text-transform: uppercase;
+      color: black;
+      user-select: none;
+    }
+
+    &.stub::after {
+      content: "stub";
+      background-color: theme.$stub-color;
+    }
+
+    &.wip::after {
+      content: "wip";
+      background-color: theme.$wip-color;
+    }
+
+    &.draft::after {
+      content: "draft";
+      background-color: theme.$draft-color;
+    }
+
+    &.done::after {
+      content: "done";
+      background-color: theme.$done-color;
+    }
   }
 }
 
@@ -96,6 +144,10 @@ main {
 
 .katex-html {
   text-align: left;
+}
+
+.drawio {
+  margin: 0 auto;
 }
 
 .search-result {
