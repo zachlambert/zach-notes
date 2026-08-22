@@ -104,6 +104,68 @@ main {
     margin: 0.6em 0 0.6em 0;
   }
 
+  // Keywords, written as [[term]] and rewritten into links by keywords.js.
+  // Deliberately not bold: prose already uses bold for terms throughout, and
+  // `#content a` is bold, so a keyword needs to read as its own thing.
+  a.keyword {
+    color: theme.$keyword-color;
+    font-weight: normal;
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+  }
+
+  a.keyword:hover {
+    color: theme.$keyword-color;
+    text-decoration: underline solid;
+  }
+
+  // A [[term]] with no matching definition. Flagged rather than silently
+  // rendered as text, so the broken reference is visible while reading.
+  .keyword-missing {
+    color: theme.$keyword-missing-color;
+    text-decoration: underline wavy;
+    text-underline-offset: 3px;
+    cursor: help;
+  }
+
+  // Set by the def_begin shortcode, and by `## Term {.definition}` on headings.
+  .definition {
+    border-left: 4px theme.$definition-color solid;
+    padding-left: 15px;
+    margin-bottom: 15px;
+  }
+
+  h1.definition, h2.definition, h3.definition,
+  h4.definition, h5.definition, h6.definition {
+    padding-left: 10px;
+    margin-bottom: 15px;
+  }
+
+  .definition-term {
+    color: theme.$keyword-color;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+  }
+
+  .glossary-letter {
+    color: theme.$keyword-color;
+    border-bottom: 2px hsl(0, 0, 90) solid;
+  }
+
+  dl.glossary {
+    margin-bottom: 20px;
+
+    dt {
+      margin-top: 0.4em;
+    }
+
+    dd {
+      margin-left: 20px;
+      color: hsl(0, 0, 40);
+      font-size: 14px;
+    }
+  }
+
   .details {
     color: hsl(0, 0, 40);
     padding-left: 15px;

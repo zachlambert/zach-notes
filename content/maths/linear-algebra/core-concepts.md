@@ -3,16 +3,21 @@ title = "Core concepts"
 weight = 1
 [extra]
 status = "wip"
+defines = ["vector space", "vector components"]
 +++
 
-# Vector space
+# Vector space {.definition}
 
 An n-dimensional vector space is defined by a set of $n$ **basis vectors** $\\{e_i\\}_{i=1}^n$, which can be added together and multiplied by a scalar $\\R$, such that we can form **linear combinations** of basis vectors:
 $$
 x = x_1 e_1 + x_2 e_2 + \ldots + x_n e_n
 $$
 
-The scalar values $\\{x_i\\}_{i=1}^n$ are called the **vector components**.
+{{ def_begin(t="vector components") }}
+
+The scalar values $\\{x_i\\}_{i=1}^n$ are called the vector components.
+
+{{ def_end() }}
 
 The vector space $V$ is the set of all possible linear combinations of basis vectors:
 $$

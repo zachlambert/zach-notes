@@ -58,6 +58,20 @@
   margin-bottom: 10px;
 }
 
+#nav-links {
+  margin-bottom: 20px;
+
+  a {
+    color: theme.$primary-fg-color;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  a:hover {
+    color: theme.$primary-hover-color;
+  }
+}
+
 nav {
   &>div {
     @media (min-width: theme.$collapse-width) {
