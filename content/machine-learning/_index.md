@@ -1,5 +1,5 @@
 +++
 title = "Machine Learning"
-weight = 90
+weight = 3
 sort_by = "weight"
 +++
