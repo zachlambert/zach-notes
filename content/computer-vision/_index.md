@@ -1,5 +1,5 @@
 +++
-title = "Machine Learning"
-weight = 4
+title = "Computer Vision"
+weight = 20
 sort_by = "weight"
 +++

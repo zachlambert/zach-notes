@@ -1,0 +1,24 @@
+{% set_global letter = "" %}
+
+<div>{{keyword_index}}</div>
+{% for entry in keyword_index | sort %}
+  {% set fields = entry | split(pat="|") %}
+  {% set initial = fields[0] | truncate(length=1, end="") | upper %}
+
+  {% if initial != letter %}
+    {% if not loop.first %}
+      </dl>
+    {% endif %}
+    {% set_global letter = initial %}
+    <h2 class="glossary-letter">{{ initial }}</h2>
+    <dl class="glossary">
+  {% endif %}
+
+  <dt><a href="{{ fields[2] | safe }}">{{ fields[1] }}</a></dt>
+  <dd>{{ fields[3] }}</dd>
+  {% if loop.last %}
+    </dl>
+  {% endif %}
+{% else %}
+<p>No keywords defined yet.</p>
+{% endfor %}

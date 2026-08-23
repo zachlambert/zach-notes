@@ -1,0 +1,77 @@
+<header id="nav-header">
+  <button
+    id="nav-toggle"
+    type="button"
+    aria-controls="navbar"
+    aria-expanded="false"
+    aria-label="Show navigation">
+  </button>
+</header>
+<nav id="navbar">
+  <div>
+    <h1><a href="{{ get_url(path="/") }}">Zach Notes</a></h1>
+
+    <form id="search-box" action="{{ get_url(path="/search")}}">
+      <input
+        type="text"
+        placeholder="Search"
+        name="query"/>
+    </form>
+
+    {% set root = get_section(path="_index.md", metadata_only=true) %}
+    {% for section in root.subsections %}
+      {% set section = get_section(path=section) %}
+      {% set open = current_path is starting_with(pat=section.path) %}
+
+      <h2 class="nav-section {% if open %}open{% endif %}">
+        <a href="{{ section.permalink }}">{{section.title}}</a>
+      </h2>
+      <section>
+        {% for page in section.pages %}
+        {% set open = current_path is starting_with(pat=page.path) %}
+        {% if "status" in page.extra %}
+        {% set status=page.extra.status %}
+        {% else %}
+        {% set status="stub" %}
+        {% endif %}
+        <div class="nav-page {% if open %}open{% endif %} nav-page-{{ status }}">
+          <a href="{{ page.permalink }}">{{page.title}}</a>
+          <span>{{status}}</span>
+        </div>
+        {% endfor %}
+
+        {% for subsection in section.subsections %}
+        {% set subsection = get_section(path=subsection) %}
+        {% set open = current_path is starting_with(pat=subsection.path) %}
+        <div class="nav-section {% if open %}open{% endif %}">
+          <a href="{{ subsection.permalink }}">
+            {{subsection.title}}
+          </a>
+          <span>{{ subsection.pages | length }}</span>
+        </div>
+        {% if open %}
+        <section>
+          {% for page in subsection.pages %}
+          {% set open = current_path is starting_with(pat=page.path) %}
+          {% if "status" in page.extra %}
+          {% set status=page.extra.status %}
+          {% else %}
+          {% set status="stub" %}
+          {% endif %}
+          <div class="nav-page {% if open %}open{% endif %} nav-page-{{ status }}">
+            <a href="{{ page.permalink }}">{{page.title}}</a>
+            <span>{{status}}</span>
+          </div>
+          {% endfor %}
+        </section>
+        {% endif %}
+        {% endfor %}
+      </section>
+    {% endfor %}
+
+    <div id="nav-links">
+      <a href="{{ get_url(path="/glossary") }}">Glossary</a>
+    </div>
+  </div>
+</nav>
+

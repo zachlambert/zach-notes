@@ -125,26 +125,11 @@ main {
     color: theme.$keyword-missing-color;
     text-decoration: underline wavy;
     text-underline-offset: 3px;
-    cursor: help;
   }
 
-  // Set by the def_begin shortcode, and by `## Term {.definition}` on headings.
-  .definition {
-    border-left: 4px theme.$definition-color solid;
-    padding-left: 15px;
-    margin-bottom: 15px;
-  }
-
-  h1.definition, h2.definition, h3.definition,
-  h4.definition, h5.definition, h6.definition {
-    padding-left: 10px;
-    margin-bottom: 15px;
-  }
-
-  .definition-term {
+  a.definition {
     color: theme.$keyword-color;
     font-weight: bold;
-    margin-bottom: 0.3em;
   }
 
   .glossary-letter {
@@ -166,7 +151,7 @@ main {
     }
   }
 
-  .details {
+  .aside {
     color: hsl(0, 0, 40);
     padding-left: 15px;
     border-left: 2px hsl(0, 0, 80) solid;
@@ -178,7 +163,7 @@ main {
   }
 
 
-  details.aside {
+  details.details {
     border: 2px hsl(0, 0, 90) solid;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -197,7 +182,7 @@ main {
     }
   }
 
-  details[open].aside {
+  details[open].details {
     summary {
       background: hsl(0, 0, 90);
     }

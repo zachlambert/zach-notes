@@ -1,9 +1,4 @@
 {% extends "base.html" %}
-
-{% block set_permalink %}
-{% set permalink=page.permalink %}
-{% endblock set_permalink %}
-
 {% block content %}
 
 <header>
@@ -22,7 +17,6 @@
   {% endif %}
 </header>
 
-<!-- Hidden by default, shown when latex rendered -->
 <div id="content">
 {{ page.content | safe }}
 </div>

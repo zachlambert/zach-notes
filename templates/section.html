@@ -1,9 +1,4 @@
 {% extends "base.html" %}
-
-{% block set_permalink %}
-{% set permalink=section.permalink %}
-{% endblock set_permalink %}
-
 {% block content %}
 
 <header>
@@ -21,7 +16,5 @@
 </header>
 
 {{ section.content | safe }}
-
-</div>
 
 {% endblock content %}

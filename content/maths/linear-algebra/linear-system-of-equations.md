@@ -83,7 +83,7 @@ $$
 
 ### Solving with the "normal matrix"
 
-{{ vpad() }}
+{{ <item.vpad/> }}
 
 $$
 \begin{align*}

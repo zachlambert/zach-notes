@@ -1,0 +1,35 @@
+{% component util.keyword_index() %}
+
+{% set keyword_index = [] %}
+
+{% set root = get_section(path="_index.md", metadata_only=true) %}
+{% for section in root.subsections %}
+  {% set section = get_section(path=section) %}
+
+  {% for page in section.pages %}
+    {% set parts = page.content | split(pat="id=\"definition-") %}
+    {% for i in range(end=parts|length - 1) %}
+      {% set keyword = parts[i+1] | split(pat="\"") | nth(n=0) %}
+      {% set permalink = page.permalink ~ "#definition-" ~ keyword %}
+      {% set_global keyword_index = [...keyword_index, [keyword, permalink]] %}
+    {% endfor %}
+  {% endfor %}
+
+  {% for subsection in section.subsections %}
+    {% set subsection = get_section(path=subsection) %}
+    {% for page in subsection.pages %}
+      {% set parts = page.content | split(pat="id=\"definition-") %}
+      {% for i in range(end=parts|length - 1) %}
+        {% set keyword = parts[i+1] | split(pat="\"") | nth(n=0) %}
+        {% set permalink = page.permalink ~ "#definition-" ~ keyword %}
+        {% set_global keyword_index = [...keyword_index, [keyword, permalink]] %}
+      {% endfor %}
+    {% endfor %}
+    {% break %}
+  {% endfor %}
+  {% break %}
+{% endfor %}
+
+{{ keyword_index | sort | json_encode() | safe }}
+
+{% endcomponent util.keyword_index %}

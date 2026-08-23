@@ -56,140 +56,33 @@
 
   <script defer type="module" src="{{ get_url(path="scripts/katex.js") }}">
   </script>
-  <!-- Must come after katex.js. Both run on DOMContentLoaded and deferred
-       modules fire in document order, so katex collapses math into .katex
-       subtrees first. The other way round, splitting a text node inside $...$
-       would leave katex unable to find the closing delimiter. -->
+  <!-- Must come after katex.js -->
   <script defer type="module" src="{{ get_url(path="scripts/keywords.js") }}">
   </script>
   <script defer type="module" src="{{ get_url(path="scripts/pdf.js") }}">
   </script>
   <script defer type="module" src="{{ get_url(path="scripts/paper.js") }}">
   </script>
-  <script defer type="module" src="{{ get_url(path="scripts/aside.js") }}">
+  <script defer type="module" src="{{ get_url(path="scripts/details.js") }}">
   </script>
   <script defer type="module" src="{{ get_url(path="scripts/scroll.js") }}">
   </script>
-  <script defer type="module" src="{{ get_url(path="scripts/nav.js") }}">
+  <script defer type="module" src="{{ get_url(path="scripts/navbar.js") }}">
   </script>
 
 </head>
 
 <body>
-  <header id="nav-header">
-    <button
-      id="nav-toggle"
-      type="button"
-      aria-controls="navbar"
-      aria-expanded="false"
-      aria-label="Show navigation">
-    </button>
-  </header>
-  <nav id="navbar">
-    <div>
-      <h1><a href="{{ get_url(path="/") }}">Zach Notes</a></h1>
+  {% set keyword_index = <util.keyword_index/> %}
+  <script type="application/json" id="keyword-index">
+    {{ keyword_index }}
+  </script>
 
-      <form id="search-box" action="{{ get_url(path="/search")}}">
-        <input
-          type="text"
-          placeholder="Search"
-          name="query"/>
-      </form>
-
-      <div id="nav-links">
-        <a href="{{ get_url(path="/keywords") }}">Keywords</a>
-      </div>
-
-      {% set permalink="" %}
-      {% block set_permalink %}
-      {% endblock set_permalink %}
-
-      {# Site-wide index of keyword definitions, as "key|term|url|page title",
-         consumed by keywords.js and by keywords.html. Accumulated inside the
-         nav walk below so it reuses the sections that walk already loads —
-         a second walk of its own more than doubled the build time. #}
-      {% set_global keyword_entries = [] %}
-
-      {% set root = get_section(path="_index.md", metadata_only=true) %}
-      {% for section in root.subsections %}
-        {% set section = get_section(path=section) %}
-        {% set open = permalink is starting_with(section.permalink) %}
-
-        <h2 class="nav-section {% if open %}open{% endif %}">
-          <a href="{{ section.permalink }}">{{section.title}}</a>
-        </h2>
-        <section>
-          {% for page in section.pages %}
-          {% for entry in page.extra.defines | default(value=[]) %}
-          {% set term = entry | trim %}
-          {% set key = term | lower %}
-          {% set anchor = term | slugify %}
-          {% set line = key ~ "|" ~ term ~ "|" ~ page.permalink ~ "#" ~ anchor ~ "|" ~ page.title %}
-          {% set_global keyword_entries = keyword_entries | concat(with=[line]) %}
-          {% endfor %}
-          {% set open = permalink is starting_with(page.permalink) %}
-          {% if "status" in page.extra %}
-          {% set status=page.extra.status %}
-          {% else %}
-          {% set status="stub" %}
-          {% endif %}
-          <div class="nav-page {% if open %}open{% endif %} nav-page-{{ status }}">
-            <a href="{{ page.permalink }}">{{page.title}}</a>
-            <span>{{status}}</span>
-          </div>
-          {% endfor %}
-
-          {% for subsection in section.subsections %}
-          {% set subsection = get_section(path=subsection) %}
-          {% set open = permalink is starting_with(subsection.permalink) %}
-          <div class="nav-section {% if open %}open{% endif %}">
-            <a href="{{ subsection.permalink }}">
-              {{subsection.title}}
-            </a>
-            <span>{{ subsection.pages | length }}</span>
-          </div>
-          {# Outside the `if open` below: the index needs every subsection's
-             terms, not just the one currently expanded in the nav. #}
-          {% for page in subsection.pages %}
-          {% for entry in page.extra.defines | default(value=[]) %}
-          {% set term = entry | trim %}
-          {% set key = term | lower %}
-          {% set anchor = term | slugify %}
-          {% set line = key ~ "|" ~ term ~ "|" ~ page.permalink ~ "#" ~ anchor ~ "|" ~ page.title %}
-          {% set_global keyword_entries = keyword_entries | concat(with=[line]) %}
-          {% endfor %}
-          {% endfor %}
-          {% if open %}
-          <section>
-            {% for page in subsection.pages %}
-            {% set open = permalink is starting_with(page.permalink) %}
-            {% if "status" in page.extra %}
-            {% set status=page.extra.status %}
-            {% else %}
-            {% set status="stub" %}
-            {% endif %}
-            <div class="nav-page {% if open %}open{% endif %} nav-page-{{ status }}">
-              <a href="{{ page.permalink }}">{{page.title}}</a>
-              <span>{{status}}</span>
-            </div>
-            {% endfor %}
-          </section>
-          {% endif %}
-          {% endfor %}
-        </section>
-      {% endfor %}
-    </div>
-  </nav>
+  {% include "partials/navbar.html" %}
 
   <main>
     {% block content %}
     {% endblock content %}
   </main>
-
-  {# `safe` is required: this template is autoescaped and would turn & into
-     &amp; inside the script, breaking JSON.parse. #}
-  <script type="application/json" id="keyword-index">
-    {{ keyword_entries | sort | json_encode() | safe }}
-  </script>
 </body>
 </html>

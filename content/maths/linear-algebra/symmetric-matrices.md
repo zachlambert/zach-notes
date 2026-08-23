@@ -32,7 +32,7 @@ $$
 x^TAx = x^TA_\textrm{sym}x
 $$
 
-{{ aside_begin(label="More results for skew-symmetric matrices")}}
+{% <item.details label="More results for skew-symmetric matrices"> %}
 
 $A_\textrm{skew}x$ is always orthogonal to $x$ such that:
 
@@ -47,7 +47,7 @@ Explanation:
 - Therefore, we must have $x^TAx = -x^TAx$ which requires $x^TAx = 0$
 - This must hold for all $x$, so $x^TAx = 0$ must hold for all $x$
 
-{{ aside_end() }}
+{% </item.details> %}
 
 ## Hermetian / self-adjoint matrices
 
@@ -159,7 +159,7 @@ The **Cholsesky decomposition** finds a unique decomposition where $G$ is a lowe
 
 The matrices L and R are called the lower and upper triangular decompositions respectively.
 
-{{ details_begin() }}
+{% <item.aside> %}
 
 L comes from "lower triangular", R comes "right triangular"
 
@@ -167,7 +167,7 @@ You have a mix of left/right triangular vs lower/upper triangular.
 
 LU uses "lower" and "upper". LLT also uses the same "lower". RTR avoided using U to avoid confusion with LU, so used "right" instead.
 
-{{ details_end() }}
+{% </item.aside> %}
 
 ## LDL decomposition (or LDLT for real matrices)
 

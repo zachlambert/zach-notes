@@ -28,7 +28,7 @@ The vector space $V$ is then defined as the set of all possible sums:
 $$
 V = \left\\{ x_i e_i | x_1 \in \mathbb{R}, \ldots, x_n \in \mathbb{R} \right\\}
 $$
-{{ vpad() }}
+{{ <item.vpad/> }}
 
 The terms $\\{ x_i \in \mathbb{R} \\}_{i=1}^n$ are called the *vector components* and can be represented concretely by an **array** of numbers:
 $$
@@ -41,7 +41,7 @@ $$
 x = \left[\begin{matrix}x_1 \\\\ x_2 \\\\ \vdots \\\\ x_n \end{matrix}\right]\_{e_i}
 $$
 
-{{ aside_begin(label="Some more details on Einstein notation") }}
+{% <item.details label="Some more details on Einstein notation"> %}
 
 Whenever we have a term with repeated indices, this implicity defines a sum over the indices.
 
@@ -68,7 +68,8 @@ $$
 \delta^i_ja_i = a_j \\\\
 \delta^i_jx_iy_j = x_iy_i
 $$
-{{ aside_end() }}
+
+{% </item.details> %}
 
 ## Covectors and the dual space
 
@@ -107,9 +108,9 @@ Therefore, we write:
 - Vector = $x^ie_i$
 - Covector = $y_i\epsilon^i$
 
-{{ details_begin() }}
+{% <item.aside> %}
 This choice is based on whether the objects are **covariant**: transform in the same was as the basis vectors under a change of coordinate system, or **contravariant**: transform under the inverse transform. See the details later in this page.
-{{ details_end() }}
+{% </item.aside> %}
 
 In many cases, where the basis vectors/covectors are implicit we can simply write vectors and covectors as $x^i$ and $y_i$ instead. Due to the subscript/superscript convention, we can still tell what type of object they are.
 

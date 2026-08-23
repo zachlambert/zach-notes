@@ -1,5 +1,5 @@
 +++
-title = "Classic CV"
-weight = 1
+title = "Recognition"
+weight = 2
 sort_by = "weight"
 +++

@@ -4,10 +4,10 @@ title = "Factor-graphs"
 
 ## Early idea of pose graphs
 
-{{ paper(
+{{<item.paper
 doi="10.1109/ROBOT.2003.1241872",
 pdf="atlas.pdf"
-)}}
+/>}}
 
 ## ISAM2 (gtsam)
 

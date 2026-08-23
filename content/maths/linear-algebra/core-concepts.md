@@ -3,34 +3,27 @@ title = "Core concepts"
 weight = 1
 [extra]
 status = "wip"
-defines = ["vector space", "vector components"]
 +++
 
-# Vector space {.definition}
+# Vector space
 
-An n-dimensional vector space is defined by a set of $n$ **basis vectors** $\\{e_i\\}_{i=1}^n$, which can be added together and multiplied by a scalar $\\R$, such that we can form **linear combinations** of basis vectors:
+An n-dimensional {{<item.definition name="vector space" permalink={page.permalink}/>}} is defined by a set of $n$ **basis vectors** $\\{e_i\\}_{i=1}^n$, which can be added together and multiplied by a scalar $\\R$, such that we can form **linear combinations** of basis vectors:
 $$
 x = x_1 e_1 + x_2 e_2 + \ldots + x_n e_n
 $$
 
-{{ def_begin(t="vector components") }}
-
 The scalar values $\\{x_i\\}_{i=1}^n$ are called the vector components.
 
-{{ def_end() }}
-
-The vector space $V$ is the set of all possible linear combinations of basis vectors:
+The {%<item.keyword>%}vector space{%</item.keyword>%} $V$ is the set of all possible linear combinations of basis vectors:
 $$
 V = \WrapC{ \sum_{i=1}^n x_ie_i \\;|\\; x_i \in \\R \\;\forall i }
 $$
 
-{{ details_begin() }}
-
+{% <item.aside> %}
 More generally, the scalars can belong to any field $x \in \\mathbb{F}$, such as the complex numbers $\\mathbb{C}$.
 
 However, for all applications I'm interested in, only the real numbers are used, so will focus on this concete case.
-
-{{ details_end() }}
+{% </item.aside> %}
 
 Generally, we can take the basis vector components as implicit, and simply treat the vector as the array of components, denoted by a vertical array:
 $$
@@ -126,7 +119,7 @@ C &= B A
 \end{align*}
 $$
 
-{{ aside_begin(label="Derivation") }}
+{% <item.details label="Derivation" > %}
 
 $z = g(y), y = f(x)$
 $$
@@ -139,7 +132,7 @@ C_{i, j} &= \sum_k B_{i, k}A_{k, j}
 \end{align*}
 $$
 
-{{ aside_end() }}
+{% </item.details> %}
 
 ## Identity matrix
 

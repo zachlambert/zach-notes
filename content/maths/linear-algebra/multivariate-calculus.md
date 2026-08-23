@@ -6,7 +6,7 @@ status = "stub"
 description = "How to differentiate functions of vectors"
 +++
 
-{{ aside_begin(label="Example of finding jacobians") }}
+{% <item.details label="Example of finding jacobians"> %}
 
 For regular euclidean vectors, lets define the function $y = f(x)$.
 
@@ -35,4 +35,4 @@ y + \delta y &= (x + \delta x)^T A (x + \delta x) + \sum_i x_i + \delta x_i \\\\
 \end{align*}
 $$
 
-{{ aside_end() }}
+{% </item.details> %}

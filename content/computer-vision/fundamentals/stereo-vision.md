@@ -14,8 +14,7 @@ TODO
 
 # 5 point problem
 
-Nister's algorithm for solving the 5pt problem:
-[../../papers/computer-vision/nister-5pt]
+Nister's algorithm for solving the 5pt problem.
 
 # Rectification
 
@@ -47,3 +46,11 @@ This then allows defining the disparity based on comparing image patches, rather
 The disparity is only accurate if there is a clear minima. If there are texture-less surfaces then there are going to be a range of patches with similar SSD.
 
 Additionally, at further distances, the disparity is smaller and a small error in the disparity gives a larger error in distance. Therefore, stereo vision naturally has a maximum distance at which it is accurate, which increases with a larger stereo baseline.
+
+# Papers
+
+{{<item.paper
+page={page}
+doi="10.1109/TPAMI.2004.17"
+pdf="nister-5pt.pdf"
+/>}}

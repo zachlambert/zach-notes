@@ -1,3 +1,5 @@
+{% component item.paper(page: map, doi: string, pdf: string) %}
+
 <div
   class="paper-summary"
   data-doi="{{ doi }}">
@@ -34,3 +36,5 @@
 </details><br>
 
 {% endif %}
+
+{% endcomponent item.paper %}
