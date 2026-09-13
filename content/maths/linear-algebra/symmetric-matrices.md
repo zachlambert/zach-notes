@@ -7,13 +7,13 @@ status = "wip"
 
 # Symmetry
 
-Symmetric matrix:
+{%<kw.def>%}Symmetric matrix{%</kw.def>%}:
 
 - $A = A^T$
 - $A \in \mathbb{S}^n \subset \mathbb{R}^{n\times n}$
 - OR $A \in \textrm{Sym}(n)$, more common in differential geometry
 
-Skew-symmetric matrix:
+{%<kw.def>%}Skew-symmetric matrix{%</kw.def>%}:
 
 - $A^T = -A$
 - $A \in \mathbb{A}^n \subset \mathbb{R}^{n\times n}$ (less common notation)
@@ -51,10 +51,12 @@ Explanation:
 
 ## Hermetian / self-adjoint matrices
 
-Hermetian is the generalisation of symmetric matrices to complex valued matrices, where $A$ is equal to it's conjugate transpose:
+{%<kw.def>%}Hermetian{%</kw.def>%} is the generalisation of symmetric matrices to complex valued matrices, where $A$ is equal to it's conjugate transpose:
 $$
 A = A^\star
 $$
+
+Also known as "{%<kw.def>%}self-adjoint{%</kw.def>%}"
 
 ## Eigendecomposition
 
@@ -71,19 +73,19 @@ For a symmetric matrix $A \in \mathbb{R}^{n\times n}$ with eigenvalues $\lambda_
 
 We can categorise $A$ in different ways depending on what range of values the expression $x^TAx$ (the "quadratic form") can take over all values of $x$:
 
-- **Positive definite (PD)**:
+- {%<kw.def keyword="positive-definite">%}Positive definite (PD){%</kw.def>%}:
   - $x^TAx > 0 \quad\forall x$
   - Denoted $A \succ 0$
   - Requires $\lambda_i > 0 \quad\forall i$
-- **Positive semi-definite (PSD)**:
+- {%<kw.def keyword="positive-semi-definite">%}Positive semi-definite (PSD){%</kw.def>%}:
   - $x^TAx \geq 0 \quad\forall x$
   - Denoted $A \succeq 0$
   - Requires $\lambda_i \geq 0 \quad\forall i$
-- **Negative definite (ND)**:
+- {%<kw.def keyword="negative-definite">%}Negative definite (ND){%</kw.def>%}:
   - $x^TAx > 0 \quad\forall x$
   - Denoted $A \prec 0$
   - Requires $\lambda_i < 0 \quad\forall i$
-- **Negative semi-definite (NSD)**:
+- {%<kw.def keyword="negative-semi-definite">%}Negative semi-definite (NSD){%</kw.def>%}:
   - $x^TAx > 0 \quad\forall x$
   - Denoted $A \preceq 0$
   - Requires $\lambda_i \leq 0 \quad\forall i$
@@ -100,16 +102,16 @@ The above concepts apply to general symmetric or non-symmetric matrices.
 Usually they are applied to symmetric matrices (since the skew-symmetric component has no effect), and this has specific set notation.
 
 - Symmetric: $A \in \mathbb{S}^n$
-- Symmetric positive semi-definite: $A \in \mathbb{S}^n_+$
-- Symmetric positive definite: $A \in \mathbb{S}^n_{++}$
+- Symmetric positive semi-definite (SPSD): $A \in \mathbb{S}^n_+$
+- {%<kw.def>%}Symmetric positive definite (SPD){%</kw.def>%}: $A \in \mathbb{S}^n_{++}$
 
-You also have the acronym SPD for symmetric positive-definite, or SPSD for symmetric positive semi-definite (although less common).
+In particular, the acronym SPD is common, SPSD isn't really standard.
 
 There aren't set notations for general non-symmetric positive definite/semi-definite matrices, other than the PD/PSD acronyms.
 
 ## Loewner partial ordering
 
-The notation $A \succ 0$ is actually called **Lowener partial ordering**.
+The notation $A \succ 0$ is actually called {%<kw.def>%}lowener partial ordering{%</kw.def>%}.
 
 Specifically:
 
@@ -118,7 +120,7 @@ Specifically:
 
 ## Triangular matrices
 
-Lower-triangular (or left-triangular) matrices only have non-zero elements _below_ the diagonal:
+{%<kw.def>%}Lower-triangular{%</kw.def>%} (or left-triangular) matrices only have non-zero elements _below_ the diagonal:
 $$
 L = \left[\begin{matrix}
 L_{11} \\\\
@@ -128,7 +130,7 @@ L_{n1} & L_{n2} & \cdots & L_{nn}
 \end{matrix}\right]
 $$
 
-Upper-triangular (or right-triangular) matrices only have non-zero elements _above_ the diagonal:
+{%<kw.def>%}Upper-triangular{%</kw.def>%} (or right-triangular) matrices only have non-zero elements _above_ the diagonal:
 $$
 R = \left[\begin{matrix}
 R_{11} & R_{12} & \cdots & R_{1n} \\\\

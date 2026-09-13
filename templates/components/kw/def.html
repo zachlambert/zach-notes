@@ -1,0 +1,1 @@
+{% component kw.def(keyword: string = "") %}{% set kw = keyword if keyword else body|slugify %}<span id="definition-{{kw}}" class="definition-anchor"></span><a data-keyword="{{kw}}" class="definition">{{ body }}</a>{% endcomponent kw.def %}

@@ -18,3 +18,18 @@ setCollapsed(localStorage.getItem("navCollapsed") !== "false");
 toggle.addEventListener("click", function() {
   setCollapsed(!root.classList.contains("nav-collapsed"));
 });
+
+// Close the dropdown when following a link, so the next page doesn't open
+// with it covering the content. Links to sections that aren't already open are
+// the exception, so the section's pages can be picked from the menu next.
+document.getElementById("navbar").addEventListener("click", function(event) {
+  const link = event.target.closest("a");
+  if (!link) {
+    return;
+  }
+  const section = link.closest(".nav-section");
+  if (section && !section.classList.contains("open")) {
+    return;
+  }
+  setCollapsed(true);
+});

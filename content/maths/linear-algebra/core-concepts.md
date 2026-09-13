@@ -7,14 +7,14 @@ status = "wip"
 
 # Vector space
 
-An n-dimensional {{<item.definition name="vector space" permalink={page.permalink}/>}} is defined by a set of $n$ **basis vectors** $\\{e_i\\}_{i=1}^n$, which can be added together and multiplied by a scalar $\\R$, such that we can form **linear combinations** of basis vectors:
+An n-dimensional {%<kw.def>%}vector space{%</kw.def>%} is defined by a set of $n$ **basis vectors** $\\{e_i\\}_{i=1}^n$, which can be added together and multiplied by a scalar $\\R$, such that we can form **linear combinations** of basis vectors:
 $$
 x = x_1 e_1 + x_2 e_2 + \ldots + x_n e_n
 $$
 
 The scalar values $\\{x_i\\}_{i=1}^n$ are called the vector components.
 
-The {%<item.keyword>%}vector space{%</item.keyword>%} $V$ is the set of all possible linear combinations of basis vectors:
+The vector space $V$ is the set of all possible linear combinations of basis vectors:
 $$
 V = \WrapC{ \sum_{i=1}^n x_ie_i \\;|\\; x_i \in \\R \\;\forall i }
 $$
@@ -34,7 +34,7 @@ When dealing with vectors and matrices only this is fine, but in the [tensors](.
 
 ## Coordinate space
 
-In addition to only looking at scalar components, all content here will focus on **coordinate spaces** $\\R^n$ specifically.
+In addition to only looking at scalar components, all content here will focus on coordinate spaces $\\R^n$ specifically.
 
 Simply put, this formalises the idea that we are using vectors to represent a set of $n$ real numbers $x_i \in \\R$,  
 written as the **n-tuple** $(x_1, \ldots, x_n)$.
@@ -55,7 +55,7 @@ Therefore, we can avoid this generality and simply think of a vector as the set 
 
 ## Vector norms and inner product
 
-The **$L_p$ norm** of a vector $x \in \\R^n$ is defined as:
+The {%<kw.def keyword="lp-norm">%}$L_p$ norm{%</kw.def>%} of a vector $x \in \\R^n$ is defined as:
 $$
 |x|_p = \WrapP{\sum_i |x_i|^p}^\frac{1}{p}
 $$
@@ -69,7 +69,7 @@ In the vast majority of cases, the norm of a vector is referring to the $L_2$ no
 
 Some notation also uses $||x||$ for vectors, to differentiate from the absolute value of a scalar $|x_i|$, but I think using $|x|$ is fine.
 
-The **inner product** of two vectors $x_1$, $x_2$, also known as the **dot product**, is defined as:
+The {%<kw.def>%}inner product{%</kw.def>%} of two vectors $x_1$, $x_2$, also known as the {%<kw.def>%}dot product{%</kw.def>%}, is defined as:
 $$
 x_1 \cdot x_2 = x_1^Tx_2 = \sqrt{\sum_i x_{1,i} x_{2,i}}
 $$
@@ -89,7 +89,7 @@ $$
 |x|_W^2 = x^TWx
 $$
 
-Note: $W$ must be a [symmetric positive semi-definite](../symmetric-matrices) matrix.
+Note: $W$ must be a {%<kw.ref keyword="symmetric-positive-definite">%}SPD{%</kw.ref>%} matrix.
 
 # Linear mappings
 

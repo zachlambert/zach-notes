@@ -1,4 +1,4 @@
-{% component util.keyword_index() %}
+{% component kw.index() %}
 
 {% set keyword_index = [] %}
 
@@ -32,4 +32,4 @@
 
 {{ keyword_index | sort | json_encode() | safe }}
 
-{% endcomponent util.keyword_index %}
+{% endcomponent kw.index %}

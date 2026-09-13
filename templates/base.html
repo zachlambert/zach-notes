@@ -69,14 +69,13 @@
   </script>
   <script defer type="module" src="{{ get_url(path="scripts/navbar.js") }}">
   </script>
+  <script type="application/json" id="keyword-index">
+    {{ <kw.index/> }}
+  </script>
 
 </head>
 
 <body>
-  {% set keyword_index = <util.keyword_index/> %}
-  <script type="application/json" id="keyword-index">
-    {{ keyword_index }}
-  </script>
 
   {% include "partials/navbar.html" %}
 

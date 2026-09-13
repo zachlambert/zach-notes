@@ -110,12 +110,9 @@ main {
   a.keyword {
     color: theme.$keyword-color;
     font-weight: normal;
-    text-decoration: underline dotted;
-    text-underline-offset: 3px;
   }
 
   a.keyword:hover {
-    color: theme.$keyword-color;
     text-decoration: underline solid;
   }
 
@@ -130,6 +127,14 @@ main {
   a.definition {
     color: theme.$keyword-color;
     font-weight: bold;
+  }
+  a.definition:hover {
+    text-decoration: underline solid;
+  }
+
+  .definition-anchor {
+    position: relative;
+    top: -1em;
   }
 
   .glossary-letter {

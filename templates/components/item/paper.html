@@ -1,4 +1,6 @@
-{% component item.paper(page: map, doi: string, pdf: string) %}
+{% component item.paper(label: string, page: map, doi: string, pdf: string = "") %}
+
+<a><h2 id="paper-{{label|slugify}}">{{label}}</h2></a>
 
 <div
   class="paper-summary"
