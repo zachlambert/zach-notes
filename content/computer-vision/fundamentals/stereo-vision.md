@@ -14,6 +14,7 @@ TODO
 
 # 5 point problem
 
+{{<paper.ref label="nister-5pt"/>}}
 Nister's algorithm (nister-5pt) for solving the 5pt problem.
 
 # Rectification
@@ -49,7 +50,7 @@ Additionally, at further distances, the disparity is smaller and a small error i
 
 # Papers
 
-{{<item.paper
+{{<paper.def
 label="nister-5pt"
 page={page}
 doi="10.1109/TPAMI.2004.17"

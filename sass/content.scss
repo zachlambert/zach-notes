@@ -113,7 +113,7 @@ main {
     text-decoration: underline solid;
   }
 
-  .kw-missing {
+  .ref-broken {
     text-decoration: underline wavy;
   }
 
@@ -130,6 +130,41 @@ main {
   .kw-def-anchor {
     position: relative;
     top: -1em;
+  }
+
+  .paper-def-box {
+    padding: 0.5em;
+    border: 2px theme.$paper-color solid;
+  }
+  .paper-def-box > h2 {
+    margin: 0;
+    text-decoration: underline solid theme.$paper-color;
+  }
+  .paper-def {
+    color: theme.$paper-color;
+    font-weight: bold;
+    margin: 0;
+  }
+  a.paper-ref {
+    color: theme.$paper-color;
+    font-weight: bold;
+  }
+  a.paper-ref:hover {
+    text-decoration: underline solid;
+  }
+
+  .paper-data {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas: "sidebar content";
+    column-gap: 40px;
+    padding: 0.5em;
+  }
+
+  .paper-data-key {
+    color: theme.$paper-color;
+    font-weight: bold;
   }
 
   .aside {

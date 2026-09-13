@@ -28,6 +28,34 @@
     }
     gap: 10px;
   }
+  .pdf-viewer-page-container {
+    position: relative;
+    line-height: 0;
+
+    canvas {
+      display: block;
+    }
+  }
+  // Based on the textLayer styles from pdf.js's pdf_viewer.css
+  .pdf-viewer-text-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    line-height: 1;
+
+    &>span {
+      position: absolute;
+      color: transparent;
+      white-space: pre;
+      cursor: text;
+      transform-origin: 0% 0%;
+    }
+
+    ::selection {
+      background: hsla(210, 100%, 50%, 0.3);
+    }
+  }
 }
 .pdf-viewer:open > .pdf-viewer-title {
   background: hsl(0, 0, 80);

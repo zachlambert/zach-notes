@@ -1,4 +1,4 @@
-{% component item.pdf(file: string) %}
+{% component item.pdf(title: string, file: string, page: map) %}
 
 {% set path = "media/" %}
 {% for i in range(end = page.components | length - 1) %}
@@ -7,6 +7,7 @@
 {% set path = path ~ file %}
 {% set url = get_url(path=path) %}
 
+{{ url }}
 <details
   class="pdf-viewer"
   data-url="{{url}}">

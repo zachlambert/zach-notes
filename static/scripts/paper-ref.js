@@ -1,7 +1,7 @@
 const index = Object.fromEntries(JSON.parse(
-  document.getElementById("kw-index").textContent));
+  document.getElementById("paper-index").textContent));
 
-for (const el of document.querySelectorAll(".kw-ref, .kw-def")) {
+for (const el of document.querySelectorAll(".paper-ref, .paper-def")) {
   if (el.dataset.label && el.dataset.label in index) {
     el.href = index[el.dataset.label];
   } else {

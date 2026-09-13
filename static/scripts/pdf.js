@@ -7,7 +7,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
 const queueOperations = []
 let renderInProgress = false;
 
-function renderPdf(url, pdfState, canvas) {
+function renderPdf(url, pdfState, canvas, textLayer) {
   renderInProgress = true;
   pdfjsLib
     .getDocument(url)
@@ -20,10 +20,26 @@ function renderPdf(url, pdfState, canvas) {
       canvas.height = viewport.height;
       canvas.width = viewport.width;
 
-      return page.render({
-        canvasContext: canvas.getContext("2d"),
-        viewport: viewport,
-      }).promise;
+      // Transparent text positioned over the canvas, so the text can be selected
+      textLayer.innerHTML = "";
+      textLayer.style.width = `${viewport.width}px`;
+      textLayer.style.height = `${viewport.height}px`;
+      const renderText = page.getTextContent().then(function (textContent) {
+        return pdfjsLib.renderTextLayer({
+          textContent: textContent,
+          container: textLayer,
+          viewport: viewport,
+          textDivs: [],
+        }).promise;
+      });
+
+      return Promise.all([
+        page.render({
+          canvasContext: canvas.getContext("2d"),
+          viewport: viewport,
+        }).promise,
+        renderText,
+      ]);
     }).then(function () {
       if (queueOperations.length > 0) {
         const operation = queueOperations.pop();
@@ -59,13 +75,22 @@ for (const el of document.getElementsByClassName("pdf-viewer")) {
   const pdfState = getPdfState(url);
   el.open = pdfState.open;
   const canvas = el.getElementsByTagName("canvas")[0];
+
+  // Wrap the canvas so the text layer can be placed on top of it
+  const pageContainer = document.createElement("div");
+  pageContainer.className = "pdf-viewer-page-container";
+  canvas.replaceWith(pageContainer);
+  pageContainer.appendChild(canvas);
+  const textLayer = document.createElement("div");
+  textLayer.className = "pdf-viewer-text-layer";
+  pageContainer.appendChild(textLayer);
   const pageEl = el.getElementsByClassName("pdf-viewer-page")[0]
   pageEl.innerHTML = pdfState.page;
   const pageCountEl = el.getElementsByClassName("pdf-viewer-page-count")[0]
   pageCountEl.innerHTML = pdfState.pageCount;
 
   function renderThis() {
-    renderPdf(url, pdfState, canvas);
+    renderPdf(url, pdfState, canvas, textLayer);
     pageCountEl.innerHTML = pdfState.pageCount;
   };
   renderThis();
@@ -122,10 +147,15 @@ for (const el of document.getElementsByClassName("pdf-viewer")) {
   el.getElementsByClassName("pdf-viewer-next")[0].addEventListener("click", onNext);
   el.getElementsByClassName("pdf-viewer-first")[0].addEventListener("click", onFirst);
   el.getElementsByClassName("pdf-viewer-last")[0].addEventListener("click", onLast);
-  canvas.addEventListener(
+  pageContainer.addEventListener(
     "click",
     function(event) {
-      if (event.offsetX < canvas.width / 2) {
+      // Don't change page when clicking on text or finishing a text selection
+      if (event.target.tagName == "SPAN" || !window.getSelection().isCollapsed) {
+        return;
+      }
+      const rect = pageContainer.getBoundingClientRect();
+      if (event.clientX - rect.left < rect.width / 2) {
         onPrev();
       } else {
         onNext();
