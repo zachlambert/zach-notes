@@ -1,1 +1,1 @@
-{% component kw.def(keyword: string = "") %}{% set kw = keyword if keyword else body|slugify %}<span id="definition-{{kw}}" class="definition-anchor"></span><a data-keyword="{{kw}}" class="definition">{{ body }}</a>{% endcomponent kw.def %}
+{% component kw.def(label: string = "") %}{% set lb = label if label else body|slugify %}<span id="kw-def-{{lb}}" class="kw-def-anchor"></span><a data-label="{{lb}}" class="kw-def">{{ body }}</a>{% endcomponent kw.def %}

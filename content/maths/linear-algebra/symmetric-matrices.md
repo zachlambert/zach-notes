@@ -73,19 +73,19 @@ For a symmetric matrix $A \in \mathbb{R}^{n\times n}$ with eigenvalues $\lambda_
 
 We can categorise $A$ in different ways depending on what range of values the expression $x^TAx$ (the "quadratic form") can take over all values of $x$:
 
-- {%<kw.def keyword="positive-definite">%}Positive definite (PD){%</kw.def>%}:
+- {%<kw.def label="positive-definite">%}Positive definite (PD){%</kw.def>%}:
   - $x^TAx > 0 \quad\forall x$
   - Denoted $A \succ 0$
   - Requires $\lambda_i > 0 \quad\forall i$
-- {%<kw.def keyword="positive-semi-definite">%}Positive semi-definite (PSD){%</kw.def>%}:
+- {%<kw.def label="positive-semi-definite">%}Positive semi-definite (PSD){%</kw.def>%}:
   - $x^TAx \geq 0 \quad\forall x$
   - Denoted $A \succeq 0$
   - Requires $\lambda_i \geq 0 \quad\forall i$
-- {%<kw.def keyword="negative-definite">%}Negative definite (ND){%</kw.def>%}:
+- {%<kw.def label="negative-definite">%}Negative definite (ND){%</kw.def>%}:
   - $x^TAx > 0 \quad\forall x$
   - Denoted $A \prec 0$
   - Requires $\lambda_i < 0 \quad\forall i$
-- {%<kw.def keyword="negative-semi-definite">%}Negative semi-definite (NSD){%</kw.def>%}:
+- {%<kw.def label="negative-semi-definite">%}Negative semi-definite (NSD){%</kw.def>%}:
   - $x^TAx > 0 \quad\forall x$
   - Denoted $A \preceq 0$
   - Requires $\lambda_i \leq 0 \quad\forall i$

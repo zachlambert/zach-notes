@@ -55,7 +55,7 @@ Therefore, we can avoid this generality and simply think of a vector as the set 
 
 ## Vector norms and inner product
 
-The {%<kw.def keyword="lp-norm">%}$L_p$ norm{%</kw.def>%} of a vector $x \in \\R^n$ is defined as:
+The {%<kw.def label="lp-norm">%}$L_p$ norm{%</kw.def>%} of a vector $x \in \\R^n$ is defined as:
 $$
 |x|_p = \WrapP{\sum_i |x_i|^p}^\frac{1}{p}
 $$
@@ -89,7 +89,7 @@ $$
 |x|_W^2 = x^TWx
 $$
 
-Note: $W$ must be a {%<kw.ref keyword="symmetric-positive-definite">%}SPD{%</kw.ref>%} matrix.
+Note: $W$ must be a {%<kw.ref label="symmetric-positive-definite">%}SPD{%</kw.ref>%} matrix.
 
 # Linear mappings
 

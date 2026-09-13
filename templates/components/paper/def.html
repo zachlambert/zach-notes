@@ -1,0 +1,1 @@
+{% component paper.def(label: string = "") %}{% set lb = label if label else body|slugify %}<span id="paper-def-{{lb}}" class="paper-def-anchor"></span><a data-label="{{lb}}" class="paper-def">{{ body }}</a>{% endcomponent paper.def %}

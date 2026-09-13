@@ -1,1 +1,1 @@
-{% component kw.ref(keyword: string="") %}<a data-keyword={{keyword if keyword else body|slugify}} class="keyword">{{body}}</a>{% endcomponent kw.ref %}
+{% component kw.ref(label: string="") %}<a data-label={{label if label else body|slugify}} class="kw-ref">{{body}}</a>{% endcomponent kw.ref %}

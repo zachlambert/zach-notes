@@ -107,32 +107,32 @@ main {
   // Keywords, written as [[term]] and rewritten into links by keywords.js.
   // Deliberately not bold: prose already uses bold for terms throughout, and
   // `#content a` is bold, so a keyword needs to read as its own thing.
-  a.keyword {
+  a.kw-ref {
     color: theme.$keyword-color;
     font-weight: normal;
   }
 
-  a.keyword:hover {
+  a.kw-ref:hover {
     text-decoration: underline solid;
   }
 
   // A [[term]] with no matching definition. Flagged rather than silently
   // rendered as text, so the broken reference is visible while reading.
-  .keyword-missing {
+  .kw-ref-missing {
     color: theme.$keyword-missing-color;
     text-decoration: underline wavy;
     text-underline-offset: 3px;
   }
 
-  a.definition {
+  a.kw-def {
     color: theme.$keyword-color;
     font-weight: bold;
   }
-  a.definition:hover {
+  a.kw-def:hover {
     text-decoration: underline solid;
   }
 
-  .definition-anchor {
+  .kw-def-anchor {
     position: relative;
     top: -1em;
   }

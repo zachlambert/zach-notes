@@ -1,28 +1,28 @@
-{% component kw.index() %}
+{% component paper.index() %}
 
-{% set kw_index = [] %}
+{% set index = [] %}
 
 {% set root = get_section(path="_index.md", metadata_only=true) %}
 {% for section in root.subsections %}
   {% set section = get_section(path=section) %}
 
   {% for page in section.pages %}
-    {% set parts = page.content | split(pat="id=\"kw-def-") %}
+    {% set parts = page.content | split(pat="id=\"paper-def-") %}
     {% for i in range(end=parts|length - 1) %}
       {% set label = parts[i+1] | split(pat="\"") | nth(n=0) %}
-      {% set permalink = page.permalink ~ "#kw-def-" ~ label %}
-      {% set_global kw_index = [...kw_index, [label, permalink]] %}
+      {% set permalink = page.permalink ~ "#paper-def-" ~ label %}
+      {% set_global index = [...index, [label, permalink]] %}
     {% endfor %}
   {% endfor %}
 
   {% for subsection in section.subsections %}
     {% set subsection = get_section(path=subsection) %}
     {% for page in subsection.pages %}
-      {% set parts = page.content | split(pat="id=\"kw-def-") %}
+      {% set parts = page.content | split(pat="id=\"paper-def-") %}
       {% for i in range(end=parts|length - 1) %}
         {% set label = parts[i+1] | split(pat="\"") | nth(n=0) %}
-        {% set permalink = page.permalink ~ "#kw-def-" ~ label %}
-        {% set_global kw_index = [...kw_index, [label, permalink]] %}
+        {% set permalink = page.permalink ~ "#paper-def-" ~ label %}
+        {% set_global index = [...index, [label, permalink]] %}
       {% endfor %}
     {% endfor %}
     {% break %}
@@ -30,6 +30,6 @@
   {% break %}
 {% endfor %}
 
-{{ kw_index | sort | json_encode() | safe }}
+{{ index | sort | json_encode() | safe }}
 
-{% endcomponent kw.index %}
+{% endcomponent paper.index %}

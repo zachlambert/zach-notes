@@ -69,16 +69,14 @@
   </script>
   <script defer type="module" src="{{ get_url(path="scripts/navbar.js") }}">
   </script>
-  <script type="application/json" id="keyword-index">
+  <script type="application/json" id="kw-index">
     {{ <kw.index/> }}
   </script>
 
 </head>
 
 <body>
-
   {% include "partials/navbar.html" %}
-
   <main>
     {% block content %}
     {% endblock content %}
