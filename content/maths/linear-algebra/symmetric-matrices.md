@@ -103,7 +103,7 @@ Usually they are applied to symmetric matrices (since the skew-symmetric compone
 
 - Symmetric: $A \in \mathbb{S}^n$
 - Symmetric positive semi-definite (SPSD): $A \in \mathbb{S}^n_+$
-- {%<kw.def>%}Symmetric positive definite (SPD){%</kw.def>%}: $A \in \mathbb{S}^n_{++}$
+- {%<kw.def>%}Symmetric positive definite{%</kw.def>%} (SPD): $A \in \mathbb{S}^n_{++}$
 
 In particular, the acronym SPD is common, SPSD isn't really standard.
 
