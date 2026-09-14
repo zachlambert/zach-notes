@@ -25,9 +25,7 @@
         {% set_global kw_index = [...kw_index, [label, permalink]] %}
       {% endfor %}
     {% endfor %}
-    {% break %}
   {% endfor %}
-  {% break %}
 {% endfor %}
 
 {{ kw_index | sort | json_encode() | safe }}

@@ -18,7 +18,7 @@ Specific classes of probability model allow different **factorisations** of the 
 
 TODO: Specific problem of modelling a discrete state trajectory + observations. Prerequisite to then exploring HMMs later.
 
-{{ drawio(file="test-process.drawio", width="300px") }}
+{{ <item.drawio file="test-process.drawio" width="300px" page={page}/> }}
 
 ## Markov models
 

@@ -63,13 +63,13 @@ $$
 $$
 such that the 2nd central moment is the variance.
 
-{{ details_begin() }}
+{% <item.aside> %}
 Other specific terms for moments are:
 - Skewness = third central moment
 - Kurtosis = fourth central moment
 
 These terms are relevant for statistics, but not really relevant in robotics.
-{{ details_end() }}
+{% </item.aside> %}
 
 ## Vector state spaces
 

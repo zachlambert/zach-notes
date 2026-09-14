@@ -46,7 +46,7 @@ p(t + \Delta t) &= p(t) + \int_{t}^{t + \Delta t}v(t)dt + \int\int_{t}^{t + \Del
 \end{align*}
 $$
 
-{{ details_begin() }}
+{% <item.aside> %}
 NOTE: The exponention for the orientation is a _time ordered_ expansion:
 $$
 \begin{align*}
@@ -58,7 +58,7 @@ $$
 for $dt = \frac{\Delta t}{N}$
 
 This can also be expressed as the $\Exp(\Omega)$ for the _magnus expansion_ $\Omega$ (although this is typically defined for left-multiplication).
-{{ details_end() }}
+{% </item.aside> %}
 
 If taking $\omega$ and $a$ constant over the interval and dropping the explicit time dependency, we can write the discrete time model as:
 $$
@@ -105,7 +105,7 @@ $$
 For $Q^{gd} = \frac{1}{\Delta t}Q^g$
 and $Q^{ad} = \frac{1}{\Delta t}Q^a$.
 
-{{ details_begin() }}
+{% <item.aside> %}
 
 The reason that the covariance is _divided_ by $\Delta t$ is that we are using the averaged noise over the interval, which is then multiplied by $\Delta t$.
 
@@ -123,7 +123,7 @@ d &= \frac{1}{\Delta t} \int_{0}(\Delta t) a \\\\
 $$
 You could also define the discrete noise terms to be the total integral over the interval, such that the covariance would be $Q \Delta t$.
 
-{{ details_end() }}
+{% </item.aside> %}
 
 This gives the discrete-time model:
 $$

@@ -60,23 +60,23 @@ $$
 h(X) = \int_x p(x)\ln\frac{1}{p(x)} dx
 $$
 
-{{ details_begin() }}
+{% <item.aside> %}
 
 The choice of base for $\log$ changes the units, and varies based on the context. eg: Typically base-2 for cryptography.  
 
 However, often we are just using this concept to illustrate certain ideas/relations, so the units don't matter. Can just use the natural log since that's easier to work with.
 
-{{ details_end() }}
+{% </item.aside> %}
 
 The entropy captures the **uncertainty** in a random variable $X$:
 - As $p(x) \to \delta(x)$, $h(X) \to -\infty$
 - As $p(x) \to $ uniform over $x \in X$, $h(x) \to \infty$
 
 It is a relative term, you can only measure the relative entropy between distributions.
-{{ details_begin() }}
+{% <item.aside> %}
 For the discrete entropy $H(X)$ on the other hand, this always satisfies $H(X) \geq 0$.  
 You get $H(X) = 0$ for $p(x) = \delta(x)$, the discrete delta function.
-{{ details_end() }}
+{% </item.aside> %}
 
 For a concrete example, the entropy of a gaussian distribution is:
 $$
@@ -135,10 +135,10 @@ x^\star &= \argmax_x p(x|y) \\\\
 \end{align*}
 $$
 
-{{ details_begin() }}
+{% <item.aside> %}
 
 In both cases the maximisation can be done over the log-probabilities instead since $\ln(\cdot)$ is a monotonic function and doesn't change the maximisation result.
 
-{{ details_end() }}
+{% </item.aside> %}
 
 Estimation should always use the MAP estimate. If there is no prior information, then this collapses to the ML estimate since $p(x)$ is constant and doesn't affect the maximisation.

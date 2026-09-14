@@ -75,9 +75,9 @@ $$
 \mathcal{N}(x; \mu, \Sigma) \propto \prod_i \mathcal{N}(x; \mu_i, \Sigma_i)
 $$
 
-{{ details_begin() }}
+{% <item.aside> %}
 Since we know the distribution remains gaussian, we don't care about the normalisation constant and write $\propto$ instead.
-{{ details_end() }}
+{% </item.aside> %}
 
 The resultant distribution $(\mu, \Sigma)$ is defined as:
 
@@ -89,7 +89,7 @@ Or, in the information form:
 - $\Omega = \sum_i \Omega_i$
 - $\eta = \sum_i \eta_i$
 
-{{ aside_begin(label="Derivation") }}
+{% <item.details label="Derivation"> %}
 
 $$
 \begin{align*}
@@ -122,7 +122,7 @@ The value of the constant doesn't matter, we were already starting with defining
 
 You can probably work through the maths to also explicitly calculate the resultant normalisation factor and show that it is equal to the expected value, but this isn't necessary.
 
-{{ aside_end() }}
+{% </item.details> %}
 
 ## Joint distributions
 
@@ -192,7 +192,7 @@ where:
 - $\Sigma_{2|1} = \Sigma_2 - \Sigma_{1, 2}^T\Sigma^{-1}\Sigma_{1,2}$
 - $\mu_{2|1} = \mu_2 + \Sigma_{1,2}^T\Sigma_1^{-1}(x_1 - \mu_1)$
 
-{{ aside_begin(label="Derivation") }}
+{% <item.details label="Derivation"> %}
 
 ### Step 1: Re-factorise the joint distribution
 
@@ -308,4 +308,4 @@ $$
 \end{align*}
 $$
 
-{{ aside_end() }}
+{% </item.details> %}

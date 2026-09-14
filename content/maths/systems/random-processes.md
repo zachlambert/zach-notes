@@ -30,7 +30,7 @@ $$
 W_t \sim \mathcal{N}(0, \sigma^2 \cdot t)
 $$
 
-{{ details_begin() }}
+{% <item.aside> %}
 
 More typically, the Weiner process is defined for unit power spectral density
 $$
@@ -41,7 +41,7 @@ $$
 \sigma W_t \sim \mathcal{N}(0, \sigma^2 \cdot t)
 $$
 
-{{ details_end() }}
+{% </item.aside> %}
 
 
 This can be converted to a discrete-time system:
@@ -53,7 +53,7 @@ w_n = W_{\Delta t} \sim \mathcal{N}(0, \sigma^2 \cdot \Delta t)
 \end{align*}
 $$
 
-{{ aside_begin(label="Comparing to constant-velocity models") }}
+{% <item.details label="Comparing to constant-velocity models"> %}
 
 
 We can define a similar system:
@@ -76,7 +76,7 @@ We have a similar additive noise $w_n$ to before, but this time has variance $\s
 
 The key difference is that here we are integrating a constant random variable over the interval, which is different to the integral of a continuous-time random process.
 
-{{ aside_end() }}
+{% </item.details> %}
 
 ## Interpreting power spectral density (PSD)
 
