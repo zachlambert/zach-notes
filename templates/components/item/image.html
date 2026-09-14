@@ -1,14 +1,7 @@
-{% component item.image(file: string, width: string) %}
-
-{% set path = "media/" %}
-{% for i in range(end = page.components | length - 1) %}
-  {% set_global path = path ~ page.components[i] ~ "/" %}
-{% endfor %}
-{% set path = path ~ file %}
-{% set url = get_url(path=path) %}
+{% component item.image(file: string, page: map, width: string) %}
 
 <div class="image">
-  <img src="{{url}}" width="{{width}}"/>
+  <img src="{{page.path ~ "/" ~ file}}" width="{{width}}"/>
 </div>
 
 {% endcomponent item.image %}

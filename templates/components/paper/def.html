@@ -3,15 +3,6 @@
 <div class="paper-def-box" id="paper-def-{{label|slugify}}">
 <h2><a class="paper-def" data-label="{{label}}">{{label}}</a></h2>
 
-{% if pdf %}
-{% set pdf_path = "media/" %}
-{% for i in range(end = page.components | length - 1) %}
-  {% set_global pdf_path = pdf_path ~ page.components[i] ~ "/" %}
-{% endfor %}
-{% set pdf_path = pdf_path ~ pdf %}
-{% set pdf_url = get_url(path=pdf_path) %}
-{% endif %}
-
 <div
   class="paper-data"
   data-label="{{label}}"
@@ -23,14 +14,11 @@
   <div class="paper-data-key">DOI</div><div><a href="https://doi.org/{{doi}}">{{doi}}</a></div>
   <div class="paper-data-key">PDF</div>
   {% if pdf %}
-  <div><a href={{pdf_url}}>{{pdf}}</a></div>
+  <div><a href={{page.path ~ "/" ~ pdf}}>{{pdf}}</a></div>
   {% else %}
   <div>Not available</div>
   {% endif %}
 </div>
-
-{# PDF viewer not enabled use the built-in viewer #}
-{# {{ <item.pdf title="PDF" file={pdf} page={page}/> }} #}
 
 </div>
 
